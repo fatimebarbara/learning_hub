@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future of Cities Learning Hub — Dr. Fatime Barbara Hegyi</title>
+<meta name="description" content="A learning ecosystem for policymakers, researchers, and city-shapers. Courses, tools, and companions built around the Future of Cities framework.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f8f5ee;
+  --paper: #fbf9f4;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #6a6a6a;
+  --sage: #3d5a3d;
+  --sage-dark: #2b412b;
+  --terracotta: #b85c38;
+  --terracotta-soft: #d4886a;
+  --gold: #c79a3e;
+  --rule: #d9d3c4;
+  --card: #ffffff;
+  --shadow: 0 1px 3px rgba(26,26,26,0.04), 0 12px 40px rgba(26,26,26,0.04);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================
+   LAYOUT
+=================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-compact { padding: 72px 0; }
+
+.eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--sage);
+  display: inline-block;
+}
+
+.eyebrow.gold { color: var(--gold); }
+.eyebrow.gold::before { background: var(--gold); }
+
+.eyebrow.terracotta { color: var(--terracotta); }
+.eyebrow.terracotta::before { background: var(--terracotta); }
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.display-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage);
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage);
+}
+
+.lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 680px;
+}
+
+/* ===================================
+   HERO
+=================================== */
+.hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,92,56,0.18), transparent 70%);
+  filter: blur(60px);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -15%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61,90,61,0.14), transparent 70%);
+  filter: blur(80px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+}
+
+.hero .display-title {
+  margin-bottom: 40px;
+}
+
+.hero-lede {
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin-bottom: 48px;
+  font-weight: 300;
+}
+
+.audience-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding: 10px 20px;
+  border: 1px solid var(--rule);
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
+}
+
+.audience-line .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+/* ===================================
+   START-HERE NAV STRIP
+=================================== */
+.nav-strip {
+  background: var(--ink);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.nav-strip-label {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--cream);
+  opacity: 0.7;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+
+.nav-links a:hover {
+  border-bottom-color: var(--gold);
+}
+
+.nav-links .step-num {
+  font-family: 'Fraunces', serif;
+  color: var(--gold);
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-right: 6px;
+}
+
+/* ===================================
+   LEARNING PATH
+=================================== */
+.path-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+}
+
+.path-step {
+  padding: 36px 32px;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+
+.path-step:last-child { border-right: none; }
+
+.path-step-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--terracotta);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.path-step-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.path-step-desc {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+/* ===================================
+   COURSE CARDS
+=================================== */
+.course-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  margin-bottom: 56px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.course-card.paid {
+  border-color: var(--sage);
+  box-shadow: 0 1px 3px rgba(26,26,26,0.04), 0 20px 60px rgba(61,90,61,0.08);
+}
+
+.course-card.paid::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--sage);
+}
+
+.card-header {
+  padding: 44px 48px 32px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  margin-bottom: 22px;
+}
+
+.badge-free {
+  background: var(--paper);
+  color: var(--terracotta);
+  border: 1px solid var(--terracotta);
+}
+
+.badge-paid {
+  background: var(--sage);
+  color: var(--cream);
+}
+
+.course-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.course-tagline {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  max-width: 700px;
+}
+
+.video-wrap {
+  background: #0a0a0a;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-placeholder {
+  text-align: center;
+  color: rgba(255,255,255,0.65);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.play-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  transition: all 0.3s;
+}
+
+.video-wrap:hover .play-icon {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+.play-icon::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 18px solid var(--cream);
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  margin-left: 5px;
+}
+
+.card-body {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+}
+
+.card-body-left {
+  padding: 44px 48px;
+  border-right: 1px solid var(--rule);
+}
+
+.card-body-right {
+  padding: 44px 48px;
+  background: var(--paper);
+}
+
+.description-title {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 16px;
+}
+
+.description-text {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.meta-list {
+  list-style: none;
+}
+
+.meta-list li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  padding: 12px 0;
+  border-bottom: 1px dotted var(--rule);
+  font-size: 14px;
+  gap: 16px;
+}
+
+.meta-list li:last-child { border-bottom: none; }
+
+.meta-list .meta-label {
+  font-weight: 500;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding-top: 2px;
+}
+
+.meta-list .meta-value {
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.overview-title {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.overview-hint {
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.iframe-placeholder {
+  width: 100%;
+  height: 480px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.iframe-placeholder .icon {
+  width: 52px;
+  height: 52px;
+  border: 1.5px solid var(--ink-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+}
+
+.iframe-placeholder .placeholder-title {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.iframe-placeholder .placeholder-sub {
+  font-size: 13px;
+  color: var(--ink-muted);
+  max-width: 300px;
+  line-height: 1.55;
+}
+
+.card-footer {
+  padding: 28px 48px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cream);
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.price-line {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.price-line strong {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 30px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s;
+  cursor: pointer;
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.cta-button:hover {
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
+}
+
+.cta-button::after {
+  content: "→";
+  font-size: 16px;
+  transition: transform 0.25s;
+}
+
+.cta-button:hover::after { transform: translateX(4px); }
+
+.cta-button.outline {
+  background: transparent;
+  color: var(--ink);
+}
+
+.cta-button.outline:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+/* ===================================
+   TOOLS SECTION (Toolkit + Assessment)
+=================================== */
+.tools-section {
+  background: var(--cream);
+}
+
+.tool-block {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  margin-bottom: 80px;
+  align-items: center;
+}
+
+.tool-block:last-child { margin-bottom: 0; }
+
+.tool-block.reverse {
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.tool-block.reverse .tool-image {
+  order: -1;
+}
+
+.tool-content h3 {
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 400;
+  margin-bottom: 14px;
+  line-height: 1.08;
+}
+
+.tool-subtitle {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--terracotta);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.tool-desc {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.tool-highlights {
+  list-style: none;
+  margin-bottom: 32px;
+  padding-left: 0;
+}
+
+.tool-highlights li {
+  padding: 10px 0 10px 32px;
+  position: relative;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  border-bottom: 1px dotted var(--rule);
+}
+
+.tool-highlights li:last-child { border-bottom: none; }
+
+.tool-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 18px;
+  height: 1px;
+  background: var(--sage);
+}
+
+.tool-image {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 48px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-image::before {
+  content: "";
+  position: absolute;
+  top: 16px; left: 16px; right: 16px; bottom: 16px;
+  border: 1px solid var(--rule);
+  pointer-events: none;
+}
+
+.tool-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.tool-image-placeholder {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--ink-muted);
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+/* City profile cards (in Assessment Tool section) */
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.profile-chip {
+  padding: 16px 18px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.profile-chip strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--sage);
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+/* ===================================
+   AI COMPANIONS
+=================================== */
+.companions-section {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.companions-section .eyebrow {
+  color: var(--gold);
+}
+.companions-section .eyebrow::before { background: var(--gold); }
+
+.companions-section .section-title {
+  color: var(--cream);
+}
+
+.companions-section .section-title em {
+  color: var(--terracotta-soft);
+}
+
+.companions-section .lede {
+  color: rgba(248,245,238,0.7);
+}
+
+.companions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.companion-card {
+  padding: 40px 36px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.companion-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(248,245,238,0.2);
+}
+
+.companion-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(248,245,238,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold);
+}
+
+.companion-card h3 {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.companion-subtitle {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.companion-desc {
+  font-size: 14.5px;
+  color: rgba(248,245,238,0.75);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.companion-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  transition: gap 0.25s;
+}
+
+.companion-card a:hover { gap: 16px; }
+
+/* ===================================
+   BOOK SECTION
+=================================== */
+.book-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.book-visual {
+  width: 280px;
+  aspect-ratio: 2/3;
+  background: linear-gradient(145deg, #5d7a5d, #2b412b);
+  position: relative;
+  box-shadow:
+    -4px 4px 0 rgba(26,26,26,0.06),
+    20px 30px 60px rgba(26,26,26,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px 28px;
+  color: var(--cream);
+}
+
+.book-visual::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: rgba(0,0,0,0.15);
+}
+
+.book-visual .book-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.book-visual .book-title {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.book-visual .book-author {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+.book-visual .book-ornament {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(248,245,238,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: rgba(248,245,238,0.5);
+}
+
+.book-content h3 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+
+.book-content h3 em {
+  font-style: italic;
+  color: var(--sage);
+  font-weight: 300;
+}
+
+.book-content p {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+.book-quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--terracotta);
+  margin: 32px 0;
+  padding-left: 28px;
+  border-left: 2px solid var(--terracotta);
+  font-weight: 300;
+}
+
+/* ===================================
+   CLOSING
+=================================== */
+.closing-section {
+  background: var(--cream);
+  text-align: center;
+  padding: 120px 32px;
+}
+
+.closing-quote {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.3;
+  max-width: 820px;
+  margin: 0 auto 48px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.closing-quote em {
+  color: var(--sage);
+  font-style: italic;
+}
+
+.closing-cta-group {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===================================
+   FOOTER NOTE
+=================================== */
+.footer-note {
+  padding: 40px 32px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--rule);
+}
+
+/* ===================================
+   DIVIDER
+=================================== */
+.ornamental-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  color: var(--sage);
+  opacity: 0.6;
+}
+
+.ornamental-divider::before,
+.ornamental-divider::after {
+  content: "";
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: currentColor;
+}
+
+.ornamental-divider .mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 20px;
+}
+
+/* ===================================
+   PROGRAMMES BY AUDIENCE
+=================================== */
+.programmes-section {
+  background: var(--cream);
+  border-top: 1px solid var(--rule);
+  padding: 100px 0;
+}
+
+.programmes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+
+.programme-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s;
+  min-height: 380px;
+}
+
+.programme-card:hover {
+  border-color: var(--sage);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(26,26,26,0.06);
+}
+
+.programme-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  margin-bottom: 18px;
+  align-self: flex-start;
+  border: 1px solid;
+}
+
+.programme-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.programme-status.live {
+  background: rgba(61,90,61,0.08);
+  color: var(--sage-dark);
+  border-color: rgba(61,90,61,0.2);
+}
+.programme-status.live::before { background: var(--sage); }
+
+.programme-status.coming {
+  background: rgba(199,154,62,0.1);
+  color: #8a6a25;
+  border-color: rgba(199,154,62,0.3);
+}
+.programme-status.coming::before { background: var(--gold); }
+
+.programme-status.licensing {
+  background: rgba(184,92,56,0.08);
+  color: var(--terracotta);
+  border-color: rgba(184,92,56,0.25);
+}
+.programme-status.licensing::before { background: var(--terracotta); }
+
+.programme-status.planned {
+  background: var(--paper);
+  color: var(--ink-muted);
+  border-color: var(--rule);
+}
+.programme-status.planned::before { background: var(--ink-muted); }
+
+.programme-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.005em;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.programme-tagline {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.programme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.programme-tag {
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 3px 10px;
+  background: var(--paper);
+  color: var(--ink-muted);
+  border: 1px solid var(--rule);
+  letter-spacing: 0.02em;
+}
+
+.programme-desc {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.programme-action {
+  font-size: 12px;
+  color: var(--sage);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage);
+  padding-bottom: 4px;
+  align-self: flex-start;
+  transition: gap 0.25s;
+}
+
+.programme-action:hover { gap: 14px; }
+
+.programme-note {
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+  line-height: 1.55;
+  padding-top: 18px;
+  border-top: 1px dotted var(--rule);
+  margin-top: auto;
+}
+
+/* Featured (CII platform) callout above the grid */
+.cii-callout {
+  background: var(--sage-dark);
+  color: var(--cream);
+  padding: 44px 48px;
+  margin-top: 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cii-callout::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 280px;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(199,154,62,0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.cii-callout-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cii-callout-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.cii-callout-title {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  color: var(--cream);
+}
+
+.cii-callout-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.cii-callout-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(248,245,238,0.8);
+  margin-bottom: 24px;
+}
+
+.cii-callout-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cream);
+  background: rgba(248,245,238,0.1);
+  border: 1px solid rgba(248,245,238,0.25);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+
+.cii-callout-link:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.cii-callout-features {
+  background: rgba(255,255,255,0.06);
+  padding: 24px;
+  border: 1px solid rgba(248,245,238,0.1);
+}
+
+.cii-feature-item {
+  padding: 10px 0;
+  border-bottom: 1px dotted rgba(248,245,238,0.12);
+}
+
+.cii-feature-item:last-child { border-bottom: none; }
+
+.cii-feature-name {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+
+.cii-feature-text {
+  font-size: 12.5px;
+  color: rgba(248,245,238,0.7);
+  line-height: 1.5;
+}
+
+.cii-coming-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  margin-top: 18px;
+}
+
+/* ===================================
+   CONTINUE EXPLORING (cross-page nav)
+=================================== */
+.explore-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  padding: 100px 0;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.explore-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.explore-card:hover {
+  border-color: var(--sage);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(26,26,26,0.06);
+}
+
+.explore-card:hover::before { transform: scaleX(1); }
+
+.explore-eyebrow {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 14px;
+}
+
+.explore-title {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.explore-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.explore-arrow {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sage);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.25s;
+}
+
+.explore-card:hover .explore-arrow { gap: 14px; }
+
+.home-link-bar {
+  background: var(--ink);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.home-link-bar a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  transition: gap 0.25s;
+}
+
+.home-link-bar a:hover { gap: 18px; }
+
+.home-link-bar a::before {
+  content: "←";
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  color: var(--gold);
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 900px) {
+  .card-body { grid-template-columns: 1fr; }
+  .card-body-left { border-right: none; border-bottom: 1px solid var(--rule); }
+
+  .tool-block, .tool-block.reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .tool-block.reverse .tool-image { order: 0; }
+
+  .book-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  .book-visual { margin: 0 auto; }
+  .book-quote { text-align: left; }
+
+  .path-grid { grid-template-columns: 1fr 1fr; }
+  .path-step:nth-child(2) { border-right: none; }
+  .path-step:nth-child(1), .path-step:nth-child(2) { border-bottom: 1px solid var(--rule); }
+
+  .companions-grid { grid-template-columns: 1fr; }
+
+  .explore-grid { grid-template-columns: 1fr; }
+
+  .programmes-grid { grid-template-columns: 1fr; }
+
+  .cii-callout { padding: 32px 28px; }
+  .cii-callout-grid { grid-template-columns: 1fr; gap: 24px; }
+  .cii-callout-title { font-size: 26px; }
+
+  .section { padding: 72px 0; }
+
+  .card-header, .card-body-left, .card-body-right, .card-footer {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .container { padding: 0 20px; }
+  .path-grid { grid-template-columns: 1fr; }
+  .path-step { border-right: none; border-bottom: 1px solid var(--rule); }
+  .path-step:last-child { border-bottom: none; }
+  .hero { min-height: auto; padding: 80px 0 40px; }
+  .hero-lede { font-size: 18px; }
+  .nav-strip { position: static; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================================
+     HERO
+================================ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">Future of Cities Learning Hub</div>
+    <h1 class="display-title">Where ideas become tools.<br>Where insight becomes <em>action</em>.</h1>
+    <p class="hero-lede">A learning ecosystem built around one question: how do we make cities that think, adapt, and care at the scale of human life?</p>
+    <div class="audience-line">
+      <span class="dot"></span>
+      For policymakers, researchers, and the people shaping urban futures
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     START-HERE NAV STRIP
+================================ -->
+<nav class="nav-strip">
+  <div class="container nav-strip-inner">
+    <div class="nav-strip-label">Start here →</div>
+    <ul class="nav-links">
+      <li><a href="#path"><span class="step-num">01</span>The path</a></li>
+      <li><a href="#mastercourses"><span class="step-num">02</span>Mastercourses</a></li>
+      <li><a href="#programmes"><span class="step-num">03</span>Programmes</a></li>
+      <li><a href="#tools"><span class="step-num">04</span>Tools</a></li>
+      <li><a href="#companions"><span class="step-num">05</span>AI companions</a></li>
+      <li><a href="#book"><span class="step-num">06</span>The book</a></li>
+      <li><a href="#explore"><span class="step-num">07</span>Explore more</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================================
+     LEARNING PATH
+================================ -->
+<section class="section path-section" id="path">
+  <div class="container">
+    <div class="eyebrow">The Learning Path</div>
+    <h2 class="section-title">Four ways in. <em>One continuous journey.</em></h2>
+    <p class="lede">Every element of the Hub plays a distinct role. Together they form a learning ecosystem you can enter at any point — and keep returning to as your practice deepens.</p>
+
+    <div class="path-grid">
+      <div class="path-step">
+        <span class="path-step-num">01</span>
+        <div class="path-step-title">Learn</div>
+        <p class="path-step-desc">Two structured courses that move you from the foundational ideas to applied practice, built around the City Intelligence Index.</p>
+      </div>
+      <div class="path-step">
+        <span class="path-step-num">02</span>
+        <div class="path-step-title">Apply</div>
+        <p class="path-step-desc">A toolkit and an assessment instrument that turn the framework into decisions — for your city, your team, your research.</p>
+      </div>
+      <div class="path-step">
+        <span class="path-step-num">03</span>
+        <div class="path-step-title">Explore</div>
+        <p class="path-step-desc">Two AI companions designed for open-ended thinking — to test assumptions, compare cases, and stretch what you see.</p>
+      </div>
+      <div class="path-step">
+        <span class="path-step-num">04</span>
+        <div class="path-step-title">Go deep</div>
+        <p class="path-step-desc">The book that grounds the whole ecosystem — the long argument, the full framework, the foundations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     MASTERCOURSES
+================================ -->
+<section class="section" id="mastercourses">
+  <div class="container">
+
+    <div style="margin-bottom: 72px; max-width: 780px;">
+      <div class="eyebrow terracotta">The Flagship Courses</div>
+      <h2 class="section-title">Two courses on <em>how cities think</em>.</h2>
+      <p class="lede">Start with the free introductory course to see cities as living systems. Go deeper with the mastercourse for policymakers and researchers — the foundation of a wider learning ecosystem (more programmes below).</p>
+    </div>
+
+    <!-- COURSE 1: CITIES ARE ALIVE -->
+    <article class="course-card free">
+      <header class="card-header">
+        <span class="badge badge-free">Free · Introductory course</span>
+        <h3 class="course-title">Cities Are Alive</h3>
+        <p class="course-tagline">The foundational course for anyone who wants to understand how cities actually work — as living systems, not spreadsheets.</p>
+      </header>
+
+      <div class="video-wrap">
+        <div class="video-placeholder">
+          <div class="play-icon"></div>
+          INTRO VIDEO — 16:9 · Replace with Vimeo or YouTube embed
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="card-body-left">
+          <div class="description-title">What you'll learn</div>
+          <p class="description-text">A gentle but rigorous introduction to the core ideas that shape the whole ecosystem: why cities behave like organisms, what intelligence means in an urban context, and why the old tools for measuring progress no longer serve the scale of human life.</p>
+
+          <ul class="meta-list">
+            <li><span class="meta-label">For</span><span class="meta-value">Policymakers · Researchers · City practitioners</span></li>
+            <li><span class="meta-label">Format</span><span class="meta-value">Self-paced · Videos + reflection</span></li>
+            <li><span class="meta-label">Duration</span><span class="meta-value">≈ 90 minutes</span></li>
+            <li><span class="meta-label">Platform</span><span class="meta-value">LearnWorlds</span></li>
+          </ul>
+        </div>
+
+        <div class="card-body-right">
+          <div class="overview-header">
+            <div class="overview-title">Course overview</div>
+            <div class="overview-hint">Interactive · Scroll to explore</div>
+          </div>
+          <div class="iframe-placeholder">
+            <div class="icon">HTML</div>
+            <div class="placeholder-title">"Cities Are Alive" overview</div>
+            <div class="placeholder-sub">Replace this placeholder with the iframe to your GitHub Pages course overview.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="price-line"><strong>Free</strong> · No credit card required</div>
+        <a href="https://future-of-cities-academy.learnworlds.com/course/cities-are-alive" class="cta-button">Start the course</a>
+      </div>
+    </article>
+
+    <!-- COURSE 2: CITY INTELLIGENCE -->
+    <article class="course-card paid">
+      <header class="card-header">
+        <span class="badge badge-paid">Mastercourse · Live</span>
+        <h3 class="course-title">City Intelligence</h3>
+        <p class="course-tagline">For policymakers and researchers. Built around the City Intelligence Index — six pillars, 150 indicators, 10 European cities.</p>
+      </header>
+
+      <div class="video-wrap">
+        <div class="video-placeholder">
+          <div class="play-icon"></div>
+          INTRO VIDEO — 16:9 · Replace with Vimeo or YouTube embed
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="card-body-left">
+          <div class="description-title">What you'll learn</div>
+          <p class="description-text">A deep, hands-on course structured around the City Intelligence Index. Learn to read the six pillars of urban intelligence, diagnose your city's profile, and turn the framework into concrete decisions — whether you're shaping policy or shaping research.</p>
+
+          <ul class="meta-list">
+            <li><span class="meta-label">For</span><span class="meta-value">Policymakers · Researchers shaping urban strategy</span></li>
+            <li><span class="meta-label">Format</span><span class="meta-value">6 sections · Videos + interactive materials + quizzes</span></li>
+            <li><span class="meta-label">Duration</span><span class="meta-value">4–5 hours of study</span></li>
+            <li><span class="meta-label">Platform</span><span class="meta-value">LearnWorlds</span></li>
+          </ul>
+        </div>
+
+        <div class="card-body-right">
+          <div class="overview-header">
+            <div class="overview-title">Course overview</div>
+            <div class="overview-hint">Interactive · Scroll to explore</div>
+          </div>
+          <div class="iframe-placeholder">
+            <div class="icon">HTML</div>
+            <div class="placeholder-title">"City Intelligence" overview</div>
+            <div class="placeholder-sub">Same iframe pattern — once the overview HTML is built, it drops into this exact slot.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="price-line"><strong>Self-paced</strong> · Lifetime access · Built around the CII</div>
+        <a href="https://future-of-cities-academy.learnworlds.com/course/city-intelligence-policy-research" class="cta-button">Enrol in the mastercourse</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================================
+     PROGRAMMES BY AUDIENCE
+================================ -->
+<section class="programmes-section" id="programmes">
+  <div class="container">
+
+    <div style="max-width: 780px;">
+      <div class="eyebrow gold">Programmes by audience</div>
+      <h2 class="section-title">City intelligence, <em>built for every kind of decision-maker</em>.</h2>
+      <p class="lede">The flagship mastercourse sets the foundation. These are the variants — each tailored to the specific audiences who shape cities in different ways. Some are live, some in development, some open for collaboration.</p>
+    </div>
+
+    <!-- CII Interactive Platform Callout -->
+    <div class="cii-callout">
+      <div class="cii-callout-grid">
+        <div>
+          <div class="cii-callout-label">The central instrument</div>
+          <h3 class="cii-callout-title">The <em>City Intelligence Index</em> — interactive platform</h3>
+          <p class="cii-callout-desc">An interactive platform where every pillar, indicator, and city in the comparison group becomes directly explorable. Run cross-pillar diagnostics, track trajectories over time, and apply the framework to your own city in your own context.</p>
+          <a href="https://fatimebarbara.vision/en/city-intelligence-index/" class="cii-callout-link">Explore the index →</a>
+          <div><span class="cii-coming-tag">Interactive platform — coming soon</span></div>
+        </div>
+        <div class="cii-callout-features">
+          <div class="cii-feature-item">
+            <div class="cii-feature-name">Live city profiles</div>
+            <div class="cii-feature-text">All six pillars, all comparison cities — readable cross-sectionally and over time</div>
+          </div>
+          <div class="cii-feature-item">
+            <div class="cii-feature-name">Cross-pillar analysis</div>
+            <div class="cii-feature-text">Visually explore how Foundational shapes Healthy Society, and every other relationship</div>
+          </div>
+          <div class="cii-feature-item">
+            <div class="cii-feature-name">Diagnostic tools</div>
+            <div class="cii-feature-text">The framework from the mastercourse, applied to the live dataset</div>
+          </div>
+          <div class="cii-feature-item">
+            <div class="cii-feature-name">Research hypotheses</div>
+            <div class="cii-feature-text">What the completed CII makes testable for academic research</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programme Cards Grid -->
+    <div class="programmes-grid">
+
+      <!-- Keynotes -->
+      <div class="programme-card">
+        <span class="programme-status live">Available now</span>
+        <h3 class="programme-title">Keynotes & Executive Workshops</h3>
+        <p class="programme-tagline">City intelligence delivered live, for high-stakes rooms.</p>
+        <div class="programme-tags">
+          <span class="programme-tag">City conferences</span>
+          <span class="programme-tag">Ministerial retreats</span>
+          <span class="programme-tag">Executive teams</span>
+        </div>
+        <p class="programme-desc">Sections of the mastercourse — failure modes, leadership mindset, the ethics of whose intelligence counts — also work as standalone keynotes and half-day workshops, each with the empirical foundation of the CII.</p>
+        <a href="https://fatimebarbara.vision/en/bio/" class="programme-action">Book a session →</a>
+      </div>
+
+      <!-- Corporate Leaders -->
+      <div class="programme-card">
+        <span class="programme-status coming">In development</span>
+        <h3 class="programme-title">City Intelligence for Corporate Leaders</h3>
+        <p class="programme-tagline">For organisations that shape cities — and want to do it as genuine partners.</p>
+        <div class="programme-tags">
+          <span class="programme-tag">Urban consultancies</span>
+          <span class="programme-tag">Real estate</span>
+          <span class="programme-tag">ESG teams</span>
+        </div>
+        <p class="programme-desc">Corporations shape cities more than most policy does — but usually without a structural map. This programme gives corporate leaders the diagnostic framework to read what a city actually needs and design partnerships that survive political transitions.</p>
+        <p class="programme-note">In development. Contact to express interest in cohort participation or in-house delivery.</p>
+      </div>
+
+      <!-- University Leadership -->
+      <div class="programme-card">
+        <span class="programme-status coming">In development</span>
+        <h3 class="programme-title">City Intelligence for University Leadership</h3>
+        <p class="programme-tagline">For universities ready to lead urban transformation, not just study it.</p>
+        <div class="programme-tags">
+          <span class="programme-tag">Rectors</span>
+          <span class="programme-tag">Strategy teams</span>
+          <span class="programme-tag">Knowledge transfer</span>
+        </div>
+        <p class="programme-desc">Universities are long-term institutional anchors — they cannot relocate, they outlive political cycles. This programme equips university leadership to read the CII diagnostically and design partnerships where institutional capacity meets structural urban gaps.</p>
+        <p class="programme-note">In development. Contact to discuss cohort or in-house delivery.</p>
+      </div>
+
+      <!-- University Module -->
+      <div class="programme-card">
+        <span class="programme-status licensing">Available for licensing</span>
+        <h3 class="programme-title">University Module: Urban Intelligence & Governance</h3>
+        <p class="programme-tagline">The CII as a comparative instrument for postgraduate teaching.</p>
+        <div class="programme-tags">
+          <span class="programme-tag">MSc Urban Policy</span>
+          <span class="programme-tag">Public Admin</span>
+          <span class="programme-tag">Urban Planning</span>
+        </div>
+        <p class="programme-desc">A self-contained module that gives postgraduate students the comparative framework no other urban course currently offers. Students leave with the capability to read a city's CII profile analytically and design compounding interventions.</p>
+        <p class="programme-note">University partnerships welcome. Contact to discuss licensing, co-teaching, or programme integration.</p>
+      </div>
+
+      <!-- Citizens -->
+      <div class="programme-card">
+        <span class="programme-status planned">Planned</span>
+        <h3 class="programme-title">City Intelligence for Citizens</h3>
+        <p class="programme-tagline">The diagnostic framework for community advocates and engaged residents.</p>
+        <div class="programme-tags">
+          <span class="programme-tag">Community groups</span>
+          <span class="programme-tag">Citizen advocates</span>
+          <span class="programme-tag">Local activists</span>
+        </div>
+        <p class="programme-desc">City intelligence is not only a tool for policymakers and researchers. The same diagnostic framework — understanding what structural mechanisms produce community outcomes — is exactly what citizen advocacy needs but rarely has access to.</p>
+        <p class="programme-note">Planned. If you work with community organisations, get in touch.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     TOOLS (Toolkit + Assessment)
+================================ -->
+<section class="section tools-section" id="tools">
+  <div class="container">
+
+    <div style="margin-bottom: 80px; max-width: 780px;">
+      <div class="eyebrow">Practice</div>
+      <h2 class="section-title">Tools that turn <em>ideas into decisions</em>.</h2>
+      <p class="lede">Once you've grasped the ideas, these are the instruments that let you apply them. Built for the teams, leaders, and researchers who turn concepts into policy.</p>
+    </div>
+
+    <!-- TOOLKIT -->
+    <div class="tool-block">
+      <div class="tool-content">
+        <div class="eyebrow gold">A Living System for Cities</div>
+        <h3>Future of Cities Toolkit</h3>
+        <p class="tool-subtitle">From data to intelligence. From systems to empathy.</p>
+
+        <p class="tool-desc">A practical, human-centred framework that helps city leaders, policymakers, and innovators design change that lasts. The digital companion to <em>The Future of Cities</em>, built for the people who see urban life as a living system — not a spreadsheet.</p>
+
+        <p class="tool-desc" style="margin-bottom: 16px;"><strong>Every module includes:</strong></p>
+
+        <ul class="tool-highlights">
+          <li>A framing insight that reframes a challenge</li>
+          <li>AI prompt cards to generate new thinking</li>
+          <li>Reflection and leadership exercises</li>
+          <li>Optional team or policy-lab activities</li>
+          <li>A repository of source documents</li>
+        </ul>
+
+        <a href="https://future-of-cities.lemonsqueezy.com/checkout" class="cta-button">Purchase the toolkit</a>
+      </div>
+
+      <div class="tool-image">
+        <img src="https://fatimebarbara.vision/en/wp-content/uploads/sites/2/2025/11/Picture-1-150x150.png" alt="Future of Cities Toolkit">
+      </div>
+    </div>
+
+    <div class="ornamental-divider"><span class="mark">✦</span></div>
+
+    <!-- ASSESSMENT TOOL -->
+    <div class="tool-block reverse">
+      <div class="tool-content">
+        <div class="eyebrow gold">A Diagnostic for Urban Intelligence</div>
+        <h3>Future of Cities Assessment Tool</h3>
+        <p class="tool-subtitle">Turning complexity into clarity — a new way to see how your city learns, adapts, and progresses.</p>
+
+        <p class="tool-desc">The Assessment Tool translates the framework of <em>The Future of Cities</em> into an interactive diagnostic for urban intelligence. It evaluates performance across six dimensions — sustainability, health, education, inclusion, security, and innovation — and reveals your city's intelligence profile.</p>
+
+        <div class="profiles-grid">
+          <div class="profile-chip"><strong>🌱 Emergent</strong>Building the foundations of collaboration and data-driven insight.</div>
+          <div class="profile-chip"><strong>💡 Innovator</strong>Experimenting with new models of participation and technology.</div>
+          <div class="profile-chip"><strong>🤝 Integrator</strong>Aligning systems for coherence and shared intelligence.</div>
+          <div class="profile-chip"><strong>🌍 Regenerative</strong>Leading through resilience, empathy, and long-term stewardship.</div>
+        </div>
+
+        <div style="margin-top: 32px;">
+          <a href="https://fatimebarbara.vision/en/city-intelligence-index/" class="cta-button outline">Join the waiting list</a>
+        </div>
+        <p style="margin-top: 14px; font-size: 13px; font-style: italic; color: var(--ink-muted);">Coming soon — for cities ready to measure what truly matters.</p>
+      </div>
+
+      <div class="tool-image">
+        <img src="https://fatimebarbara.vision/en/wp-content/uploads/sites/2/2025/11/Assessmenttool-150x150.png" alt="Future of Cities Assessment Tool">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     AI COMPANIONS
+================================ -->
+<section class="section companions-section" id="companions">
+  <div class="container">
+
+    <div style="max-width: 780px;">
+      <div class="eyebrow">Exploration</div>
+      <h2 class="section-title">AI companions for <em>urban curiosity</em>.</h2>
+      <p class="lede">Open-ended thinking partners for the moments when you don't know what you're looking for yet — when the question matters more than the answer.</p>
+    </div>
+
+    <div class="companions-grid">
+
+      <div class="companion-card">
+        <div class="companion-icon">GPT</div>
+        <h3>Urban Futures Lab GPT</h3>
+        <p class="companion-subtitle">Your research co-pilot</p>
+        <p class="companion-desc">A customised GPT that distils years of research into an accessible guide for mayors, policymakers, researchers, and urban innovators. An always-on co-pilot for evidence-based citymaking — to decode indicators, compare case studies, test strategies, or explore new futures. It evolves as new research expands our understanding of cities.</p>
+        <a href="https://chatgpt.com/g/g-68ae0e716fec8191820dc3d40cbbf24a-urban-futures-lab">Open the GPT <span>→</span></a>
+      </div>
+
+      <div class="companion-card">
+        <div class="companion-icon">SYN</div>
+        <h3>syn.city.ai</h3>
+        <p class="companion-subtitle">Cognitive infrastructure for urban thinking</p>
+        <p class="companion-desc">Syn — for <em>Synthesis</em>, <em>Systems</em>, and <em>Synchronization</em>. An augmented intelligence partner designed for analytical amplification and pattern detection: it helps you slow down, surface second-order effects, and see what your initial instinct misses. The companion for the moments when the right question matters more than the fastest answer.</p>
+        <a href="https://www.instagram.com/syn.city.ai">Follow on Instagram <span>→</span></a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     THE BOOK
+================================ -->
+<section class="section book-section" id="book">
+  <div class="container">
+    <div class="book-layout">
+
+      <div class="book-visual">
+        <div>
+          <div class="book-label">The Future of</div>
+          <div class="book-title" style="margin-top: 4px;">Cities</div>
+        </div>
+        <div class="book-ornament">✦</div>
+        <div class="book-author">Dr. Fatime Barbara Hegyi</div>
+      </div>
+
+      <div class="book-content">
+        <div class="eyebrow terracotta">Foundations</div>
+        <h3>The book that <em>started it all</em>.</h3>
+        <p><em>The Future of Cities</em> is where this journey begins — a book that redefines how we think about urban life, data, and collective intelligence. It explores how cities can move beyond efficiency to empathy, beyond management to meaning.</p>
+
+        <blockquote class="book-quote">Between data and dreams, we find the courage to reimagine our cities — and ourselves.</blockquote>
+
+        <a href="https://fatimebarbara.vision/en/books-future-of-cities/" class="cta-button">Buy the book</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     CONTINUE EXPLORING (cross-page navigation)
+================================ -->
+<section class="explore-section" id="explore">
+  <div class="container">
+
+    <div style="max-width: 780px;">
+      <div class="eyebrow">Continue exploring</div>
+      <h2 class="section-title">More from the <em>Future of Cities</em>.</h2>
+      <p class="lede">The Learning Hub is one part of a broader body of work. Here's where to go next, depending on what you're searching for.</p>
+    </div>
+
+    <div class="explore-grid">
+
+      <a href="https://fatimebarbara.vision/en/city-intelligence-index/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Framework</div>
+          <h3 class="explore-title">City Intelligence Index</h3>
+          <p class="explore-desc">The full framework: six pillars, 150 indicators, 10 European cities. Where the mastercourse content comes from.</p>
+        </div>
+        <span class="explore-arrow">Explore the index →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/books-future-of-cities/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Foundations</div>
+          <h3 class="explore-title">The Future of Cities</h3>
+          <p class="explore-desc">The book where the journey began. The long argument behind every course, tool, and framework on this site.</p>
+        </div>
+        <span class="explore-arrow">Read more →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/publications/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Research</div>
+          <h3 class="explore-title">Publications</h3>
+          <p class="explore-desc">Peer-reviewed articles, policy briefs, and reports that ground the framework in evidence.</p>
+        </div>
+        <span class="explore-arrow">Browse publications →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/mastercourses" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Programmes</div>
+          <h3 class="explore-title">Mastercourses</h3>
+          <p class="explore-desc">A deeper look at the structured learning programmes — full curricula, formats, and what's inside each course.</p>
+        </div>
+        <span class="explore-arrow">See all courses →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/artworks-uj/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Creative Side</div>
+          <h3 class="explore-title">Artworks</h3>
+          <p class="explore-desc">Where the analytical work meets the visual. A different way of seeing cities — and the people inside them.</p>
+        </div>
+        <span class="explore-arrow">View the artworks →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/contact/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">Get in Touch</div>
+          <h3 class="explore-title">Work together</h3>
+          <p class="explore-desc">For partnerships, speaking engagements, research collaborations, or city consultations.</p>
+        </div>
+        <span class="explore-arrow">Send a message →</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     CLOSING
+================================ -->
+<section class="closing-section">
+  <div class="container">
+    <p class="closing-quote">The future of cities isn't written in policies — it's written in how we <em>think, collaborate, and learn</em>.</p>
+    <div class="closing-cta-group">
+      <a href="#mastercourses" class="cta-button">Begin with the courses</a>
+      <a href="https://fatimebarbara.vision/en/contact/" class="cta-button outline">Send a message</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     BACK HOME LINK BAR
+================================ -->
+<div class="home-link-bar">
+  <a href="https://fatimebarbara.vision/en">Back to fatimebarbara.vision</a>
+</div>
+
+<!-- ================================
+     FOOTER NOTE
+================================ -->
+<div class="footer-note">
+  Where city intelligence becomes human — and humans become city-shapers.
+</div>
+
+</body>
+</html>
