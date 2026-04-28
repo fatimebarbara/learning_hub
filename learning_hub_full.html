@@ -44,12 +44,8 @@ body {
 =================================== */
 .container {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  width: 100%;
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
 .section {
@@ -134,10 +130,12 @@ h1, h2, h3 {
    HERO
 =================================== */
 .hero {
-  min-height: auto;
+  min-height: 72vh;
   display: flex;
   align-items: center;
-  padding: 80px 0 60px;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-bg {
@@ -174,9 +172,6 @@ h1, h2, h3 {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
 }
 
@@ -564,6 +559,44 @@ h1, h2, h3 {
   color: var(--ink-muted);
   max-width: 300px;
   line-height: 1.55;
+}
+
+/* ===================================
+   INLINE VIDEO + EMBEDDED OVERVIEW
+   (used inside the right column of course cards)
+=================================== */
+.video-inline {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  margin-bottom: 4px;
+}
+
+.video-inline iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.course-overview-frame {
+  width: 100%;
+  height: 600px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.course-overview-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 .card-footer {
@@ -1603,24 +1636,21 @@ h1, h2, h3 {
         <p class="course-tagline">The foundational course for anyone who wants to understand how cities actually work — as living systems, not spreadsheets.</p>
       </header>
 
-      <div class="video-wrap">
-        <div class="video-placeholder">
-          <div class="play-icon"></div>
-          INTRO VIDEO — 16:9 · Replace with Vimeo or YouTube embed
-        </div>
-      </div>
-
       <div class="card-body">
         <div class="card-body-left">
-          <div class="description-title">What you'll learn</div>
-          <p class="description-text">A gentle but rigorous introduction to the core ideas that shape the whole ecosystem: why cities behave like organisms, what intelligence means in an urban context, and why the old tools for measuring progress no longer serve the scale of human life.</p>
-
-          <ul class="meta-list">
-            <li><span class="meta-label">For</span><span class="meta-value">Policymakers · Researchers · City practitioners</span></li>
-            <li><span class="meta-label">Format</span><span class="meta-value">Self-paced · Videos + reflection</span></li>
-            <li><span class="meta-label">Duration</span><span class="meta-value">≈ 90 minutes</span></li>
-            <li><span class="meta-label">Platform</span><span class="meta-value">LearnWorlds</span></li>
-          </ul>
+          <div class="overview-header">
+            <div class="overview-title">Watch the introduction</div>
+            <div class="overview-hint">2:28 · Course preview</div>
+          </div>
+          <div class="video-inline">
+            <iframe 
+              src="https://player.vimeo.com/video/1187217670?badge=0&autopause=0&player_id=0&app_id=58479" 
+              title="Cities Are Alive — course introduction"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen></iframe>
+          </div>
         </div>
 
         <div class="card-body-right">
@@ -1628,10 +1658,12 @@ h1, h2, h3 {
             <div class="overview-title">Course overview</div>
             <div class="overview-hint">Interactive · Scroll to explore</div>
           </div>
-          <div class="iframe-placeholder">
-            <div class="icon">HTML</div>
-            <div class="placeholder-title">"Cities Are Alive" overview</div>
-            <div class="placeholder-sub">Replace this placeholder with the iframe to your GitHub Pages course overview.</div>
+          <div class="course-overview-frame">
+            <iframe 
+              src="https://fatimebarbara.github.io/cities_are_alive/OVERVIEW_cities-are-alive.html"
+              title="Cities Are Alive — interactive course overview"
+              frameborder="0"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
