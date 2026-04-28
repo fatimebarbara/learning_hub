@@ -44,12 +44,8 @@ body {
 =================================== */
 .container {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  width: 100%;
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
 .section {
@@ -134,10 +130,12 @@ h1, h2, h3 {
    HERO
 =================================== */
 .hero {
-  min-height: auto;
+  min-height: 72vh;
   display: flex;
   align-items: center;
-  padding: 80px 0 60px;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-bg {
@@ -174,9 +172,6 @@ h1, h2, h3 {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
 }
 
@@ -598,6 +593,30 @@ h1, h2, h3 {
 }
 
 .course-overview-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Full-width variant — used by City Intelligence card where the
+   overview HTML already contains the intro video, so we don't need
+   a separate left video column. One iframe takes the full card width. */
+.card-body-fullwidth {
+  padding: 44px 48px;
+  background: var(--paper);
+}
+
+.course-overview-frame-wide {
+  width: 100%;
+  height: 720px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  margin-top: 18px;
+}
+
+.course-overview-frame-wide iframe {
   width: 100%;
   height: 100%;
   border: 0;
@@ -1501,6 +1520,8 @@ h1, h2, h3 {
 @media (max-width: 900px) {
   .card-body { grid-template-columns: 1fr; }
   .card-body-left { border-right: none; border-bottom: 1px solid var(--rule); }
+  .card-body-fullwidth { padding: 32px 24px; }
+  .course-overview-frame-wide { height: 580px; }
 
   .tool-block, .tool-block.reverse {
     grid-template-columns: 1fr;
@@ -1687,36 +1708,18 @@ h1, h2, h3 {
         <p class="course-tagline">For policymakers and researchers. Built around the City Intelligence Index — six pillars, 150 indicators, mapped across European cities.</p>
       </header>
 
-      <div class="video-wrap">
-        <div class="video-placeholder">
-          <div class="play-icon"></div>
-          INTRO VIDEO — 16:9 · Replace with Vimeo or YouTube embed
+      <div class="card-body-fullwidth">
+        <div class="overview-header">
+          <div class="overview-title">Course overview &amp; introduction video</div>
+          <div class="overview-hint">Interactive · Includes intro video · Scroll to explore</div>
         </div>
-      </div>
-
-      <div class="card-body">
-        <div class="card-body-left">
-          <div class="description-title">What you'll learn</div>
-          <p class="description-text">A deep, hands-on course structured around the City Intelligence Index. Learn to read the six pillars of urban intelligence, diagnose your city's profile, and turn the framework into concrete decisions — whether you're shaping policy or shaping research.</p>
-
-          <ul class="meta-list">
-            <li><span class="meta-label">For</span><span class="meta-value">Policymakers · Researchers shaping urban strategy</span></li>
-            <li><span class="meta-label">Format</span><span class="meta-value">6 sections · Videos + interactive materials + quizzes</span></li>
-            <li><span class="meta-label">Duration</span><span class="meta-value">4–5 hours of study</span></li>
-            <li><span class="meta-label">Platform</span><span class="meta-value">LearnWorlds</span></li>
-          </ul>
-        </div>
-
-        <div class="card-body-right">
-          <div class="overview-header">
-            <div class="overview-title">Course overview</div>
-            <div class="overview-hint">Interactive · Scroll to explore</div>
-          </div>
-          <div class="iframe-placeholder">
-            <div class="icon">HTML</div>
-            <div class="placeholder-title">"City Intelligence" overview</div>
-            <div class="placeholder-sub">Same iframe pattern — once the overview HTML is built, it drops into this exact slot.</div>
-          </div>
+        <div class="course-overview-frame-wide">
+          <iframe 
+            src="https://fatimebarbara.github.io/learning_hub/OVERVIEW_mastercourse.html"
+            title="City Intelligence — interactive course overview with intro video"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            allowfullscreen></iframe>
         </div>
       </div>
 
