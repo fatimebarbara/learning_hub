@@ -601,9 +601,11 @@ h1, h2, h3 {
 
 /* Full-width variant — used by City Intelligence card where the
    overview HTML already contains the intro video, so we don't need
-   a separate left video column. One iframe takes the full card width. */
+   a separate left video column. One iframe takes the full card width.
+   Padding is minimal so the iframe reads as the card content itself,
+   not a small element floating inside a larger card. */
 .card-body-fullwidth {
-  padding: 44px 48px;
+  padding: 28px 32px 32px;
   background: var(--paper);
 }
 
@@ -613,7 +615,7 @@ h1, h2, h3 {
   background: var(--card);
   border: 1px solid var(--rule);
   overflow: hidden;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .course-overview-frame-wide iframe {
@@ -1520,7 +1522,7 @@ h1, h2, h3 {
 @media (max-width: 900px) {
   .card-body { grid-template-columns: 1fr; }
   .card-body-left { border-right: none; border-bottom: 1px solid var(--rule); }
-  .card-body-fullwidth { padding: 32px 24px; }
+  .card-body-fullwidth { padding: 20px 18px 24px; }
   .course-overview-frame-wide { height: 580px; }
 
   .tool-block, .tool-block.reverse {
@@ -1715,7 +1717,7 @@ h1, h2, h3 {
         </div>
         <div class="course-overview-frame-wide">
           <iframe 
-            src="https://fatimebarbara.github.io/learning_hub/OVERVIEW_mastercourse.html?v=2"
+            src="https://fatimebarbara.github.io/city-intelligence-course/OVERVIEW_mastercourse.html"
             title="City Intelligence — interactive course overview with intro video"
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
