@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Intelligence Index — Dr. Fatime Barbara Hegyi</title>
+<meta name="description" content="A diagnostic framework measuring the structural capacity of cities to learn, adapt, and improve. Six pillars, 150 indicators, mapped across European cities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f8f5ee;
+  --paper: #fbf9f4;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #6a6a6a;
+  --sage: #3d5a3d;
+  --sage-dark: #2b412b;
+  --sage-light: #7a9a7a;
+  --terracotta: #b85c38;
+  --terracotta-soft: #d4886a;
+  --gold: #c79a3e;
+  --rule: #d9d3c4;
+  --card: #ffffff;
+  --shadow: 0 1px 3px rgba(26,26,26,0.04), 0 12px 40px rgba(26,26,26,0.04);
+
+  /* Pillar accent colors */
+  --p-foundational: #4a6a8c;
+  --p-innovator: #b85c38;
+  --p-integrator: #7a5a8a;
+  --p-regenerative: #5d8a5d;
+  --p-connected: #c79a3e;
+  --p-healthy: #c66a6a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Work Sans', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===================================
+   LAYOUT
+=================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+}
+
+.section { padding: 100px 0; position: relative; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.eyebrow.gold { color: var(--gold); }
+.eyebrow.terracotta { color: var(--terracotta); }
+.eyebrow.cream { color: rgba(248,245,238,0.85); }
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.section-title {
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage);
+}
+
+.lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 680px;
+}
+
+/* ===================================
+   HERO
+=================================== */
+.hero {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,92,56,0.18), transparent 70%);
+  filter: blur(60px);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -15%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61,90,61,0.14), transparent 70%);
+  filter: blur(80px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  width: 100%;
+}
+
+.display-title {
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 36px;
+}
+
+.display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage);
+}
+
+.hero-lede {
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 56px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  border-left: 1px solid var(--rule);
+  padding-left: 24px;
+}
+
+.hero-stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.hero-stat-number em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 300;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* ===================================
+   STICKY NAV STRIP
+=================================== */
+.nav-strip {
+  background: var(--ink);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.nav-strip-label {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--cream);
+  opacity: 0.7;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+
+.nav-links a:hover { border-bottom-color: var(--gold); }
+
+.nav-links .step-num {
+  font-family: 'Fraunces', serif;
+  color: var(--gold);
+  font-size: 11px;
+  font-style: italic;
+  text-transform: none;
+  margin-right: 6px;
+}
+
+/* ===================================
+   WHY SECTION
+=================================== */
+.why-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.why-quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--ink);
+  border-left: 3px solid var(--terracotta);
+  padding-left: 32px;
+  letter-spacing: -0.005em;
+}
+
+.why-quote em {
+  color: var(--terracotta);
+  font-style: italic;
+}
+
+.why-text p {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.why-text p:last-child { margin-bottom: 0; }
+
+.why-text strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ===================================
+   PILLARS SECTION
+=================================== */
+.pillars-section { background: var(--cream); }
+
+.pillars-intro {
+  margin-bottom: 64px;
+  max-width: 780px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pillar-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 36px 32px;
+  position: relative;
+  transition: all 0.3s;
+  overflow: hidden;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+}
+
+.pillar-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--pillar-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.pillar-card:hover::before { transform: scaleX(1); }
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px rgba(26,26,26,0.08);
+  border-color: var(--pillar-color);
+}
+
+.pillar-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--pillar-color);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.pillar-name {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.pillar-name em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--pillar-color);
+  display: block;
+  margin-top: 4px;
+}
+
+.pillar-desc {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.pillar-focus-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pillar-color);
+  margin-bottom: 12px;
+  padding-top: 16px;
+  border-top: 1px dotted var(--rule);
+}
+
+.pillar-focus {
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  font-style: italic;
+}
+
+/* Pillar color assignments */
+.pillar-card.foundational { --pillar-color: var(--p-foundational); }
+.pillar-card.innovator { --pillar-color: var(--p-innovator); }
+.pillar-card.integrator { --pillar-color: var(--p-integrator); }
+.pillar-card.regenerative { --pillar-color: var(--p-regenerative); }
+.pillar-card.connected { --pillar-color: var(--p-connected); }
+.pillar-card.healthy { --pillar-color: var(--p-healthy); }
+
+/* ===================================
+   MECHANISM SECTION (the "so what")
+=================================== */
+.mechanism-section {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.mechanism-section .section-title { color: var(--cream); }
+.mechanism-section .section-title em { color: var(--terracotta-soft); }
+.mechanism-section .lede { color: rgba(248,245,238,0.7); }
+
+.contrast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.contrast-block {
+  padding: 40px 36px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  position: relative;
+}
+
+.contrast-block.against {
+  border-color: rgba(184,92,56,0.3);
+}
+
+.contrast-block.with {
+  border-color: rgba(199,154,62,0.4);
+  background: rgba(199,154,62,0.05);
+}
+
+.contrast-label {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid currentColor;
+}
+
+.contrast-block.against .contrast-label { color: var(--terracotta-soft); }
+.contrast-block.with .contrast-label { color: var(--gold); }
+
+.contrast-title {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.contrast-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(248,245,238,0.75);
+  margin-bottom: 18px;
+}
+
+.contrast-desc:last-child { margin-bottom: 0; }
+
+.contrast-desc strong {
+  color: var(--cream);
+  font-weight: 500;
+}
+
+/* ===================================
+   SEVEN-STEP PLAN
+=================================== */
+.plan-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+}
+
+.plan-intro {
+  margin-bottom: 64px;
+  max-width: 780px;
+}
+
+.steps-flow {
+  position: relative;
+  margin-top: 48px;
+}
+
+.step-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.step-row:last-child { border-bottom: none; }
+
+.step-row:hover {
+  background: rgba(199,154,62,0.04);
+}
+
+.step-row:hover .step-number {
+  color: var(--terracotta);
+  transform: scale(1.05);
+}
+
+.step-number {
+  font-family: 'Fraunces', serif;
+  font-size: 56px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--sage);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: all 0.3s;
+}
+
+.step-content {
+  padding-top: 8px;
+}
+
+.step-name {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.005em;
+}
+
+.step-desc {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+}
+
+.step-desc em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+/* ===================================
+   DATA FOUNDATIONS
+=================================== */
+.data-section {
+  background: var(--cream);
+}
+
+.data-intro {
+  max-width: 780px;
+  margin-bottom: 56px;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  background: var(--card);
+}
+
+.data-item {
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  transition: background 0.25s;
+}
+
+.data-item:nth-child(2n) { border-right: none; }
+.data-item:nth-last-child(-n+2) { border-bottom: none; }
+
+.data-item:hover { background: var(--paper); }
+
+.data-source-name {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.data-source-desc {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+.data-source-desc em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+/* ===================================
+   PLATFORM PREVIEW (coming soon)
+=================================== */
+.platform-section {
+  background: var(--sage-dark);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.platform-section::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(199,154,62,0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  margin-top: 48px;
+}
+
+.platform-section .eyebrow { color: var(--gold); }
+.platform-section .section-title { color: var(--cream); }
+.platform-section .section-title em { color: var(--gold); }
+.platform-section .lede { color: rgba(248,245,238,0.75); }
+
+.platform-features {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(248,245,238,0.12);
+  padding: 36px 32px;
+}
+
+.platform-feature {
+  padding: 16px 0;
+  border-bottom: 1px dotted rgba(248,245,238,0.12);
+}
+
+.platform-feature:last-child { border-bottom: none; padding-bottom: 0; }
+.platform-feature:first-child { padding-top: 0; }
+
+.platform-feature-name {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.platform-feature-text {
+  font-size: 13.5px;
+  color: rgba(248,245,238,0.7);
+  line-height: 1.55;
+}
+
+.platform-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  margin-top: 24px;
+}
+
+.platform-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cream);
+  background: rgba(248,245,238,0.1);
+  border: 1px solid rgba(248,245,238,0.3);
+  padding: 14px 28px;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 24px;
+  transition: all 0.25s;
+}
+
+.platform-cta:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+/* ===================================
+   CONTINUE EXPLORING
+=================================== */
+.explore-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  padding: 100px 0;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.explore-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.explore-card:hover {
+  border-color: var(--sage);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(26,26,26,0.06);
+}
+
+.explore-card:hover::before { transform: scaleX(1); }
+
+.explore-eyebrow {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 14px;
+}
+
+.explore-title {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.explore-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.explore-arrow {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sage);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.25s;
+}
+
+.explore-card:hover .explore-arrow { gap: 14px; }
+
+/* ===================================
+   FOOTER
+=================================== */
+.home-link-bar {
+  background: var(--ink);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.home-link-bar a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  transition: gap 0.25s;
+}
+
+.home-link-bar a:hover { gap: 18px; }
+
+.home-link-bar a::before {
+  content: "←";
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  color: var(--gold);
+}
+
+.footer-note {
+  padding: 36px 32px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--rule);
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 900px) {
+  .why-grid { grid-template-columns: 1fr; gap: 40px; }
+  .pillars-grid { grid-template-columns: 1fr 1fr; }
+  .contrast-grid { grid-template-columns: 1fr; }
+  .data-grid { grid-template-columns: 1fr; }
+  .data-item { border-right: none; }
+  .data-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  .data-item:last-child { border-bottom: none; }
+  .platform-grid { grid-template-columns: 1fr; gap: 32px; }
+  .explore-grid { grid-template-columns: 1fr; }
+  .section { padding: 72px 0; }
+  .step-row { grid-template-columns: 1fr; gap: 12px; }
+  .step-number { font-size: 42px; }
+  .nav-strip { position: static; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 11px; }
+}
+
+@media (max-width: 560px) {
+  .container { padding: 0 20px; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 24px; }
+  .hero-stat { padding-left: 16px; }
+  .hero-stat-number { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================================
+     HERO
+================================ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">The City Intelligence Index</div>
+    <h1 class="display-title">A diagnostic for <em>how cities think</em>.</h1>
+    <p class="hero-lede">Not another ranking. A framework that measures the structural capacity of a city to learn, adapt, and improve — across the dimensions that actually shape human life.</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number"><em>6</em></div>
+        <div class="hero-stat-label">Pillars of intelligence</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number"><em>150</em></div>
+        <div class="hero-stat-label">Indicators</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number"><em>European</em></div>
+        <div class="hero-stat-label">Cities mapped</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number"><em>1</em></div>
+        <div class="hero-stat-label">Diagnostic instrument</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     STICKY NAV
+================================ -->
+<nav class="nav-strip">
+  <div class="container nav-strip-inner">
+    <div class="nav-strip-label">In this page →</div>
+    <ul class="nav-links">
+      <li><a href="#why"><span class="step-num">01</span>Why it exists</a></li>
+      <li><a href="#pillars"><span class="step-num">02</span>The six pillars</a></li>
+      <li><a href="#mechanism"><span class="step-num">03</span>How it works</a></li>
+      <li><a href="#plan"><span class="step-num">04</span>The improvement plan</a></li>
+      <li><a href="#data"><span class="step-num">05</span>Data foundations</a></li>
+      <li><a href="#platform"><span class="step-num">06</span>The platform</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================================
+     WHY THE CII EXISTS
+================================ -->
+<section class="section why-section" id="why">
+  <div class="container">
+    <div class="eyebrow terracotta">Why the index exists</div>
+    <h2 class="section-title">Cities aren't failing for <em>lack of data</em>.</h2>
+    <p class="lede">They're failing because the data we collect rarely speaks to the structures that produce outcomes. GDP rises while social trust collapses. Air quality improves while inequality deepens. Most urban metrics tell us what happened — not whether the city has the capacity to do better next time.</p>
+
+    <div class="why-grid">
+      <blockquote class="why-quote">
+        The CII is a diagnostic, <em>not a ranking</em>. It measures whether a city has the structural capacity to learn — not just how it ranks today.
+      </blockquote>
+
+      <div class="why-text">
+        <p>Most urban indices were built to declare winners. The City Intelligence Index was built to ask a different question: <strong>given everything happening in this city, can it actually act intelligently on what it knows?</strong></p>
+        <p>That question turns out to be more useful than any ranking. A city with a respectable overall score can still be quietly losing the capacity to coordinate, to listen, to recover from shocks. A city with a modest score can be building exactly the kind of capacity that compounds.</p>
+        <p>The CII surfaces those structural realities — the ones that determine whether the next decade goes well or badly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     THE SIX PILLARS
+================================ -->
+<section class="section pillars-section" id="pillars">
+  <div class="container">
+    <div class="pillars-intro">
+      <div class="eyebrow">The six pillars</div>
+      <h2 class="section-title">Six dimensions of <em>urban intelligence</em>.</h2>
+      <p class="lede">Each pillar measures a distinct capacity — not an outcome. Together they describe whether a city has the structural conditions to learn from what it does, adapt to what it faces, and improve over time.</p>
+    </div>
+
+    <div class="pillars-grid">
+
+      <div class="pillar-card foundational">
+        <div class="pillar-num">01</div>
+        <h3 class="pillar-name">Foundational<em>Intelligence</em></h3>
+        <p class="pillar-desc">The capacity for participation. A city cannot be intelligent if significant portions of its population are marginalised or excluded from the systems that shape their lives.</p>
+        <div class="pillar-focus-label">Focus areas</div>
+        <p class="pillar-focus">Education access · digital inclusion · institutional trust · civic participation</p>
+      </div>
+
+      <div class="pillar-card innovator">
+        <div class="pillar-num">02</div>
+        <h3 class="pillar-name">Innovator<em>Intelligence</em></h3>
+        <p class="pillar-desc">The capacity to generate and absorb new knowledge. Measured not just by R&amp;D inputs, but by how efficiently scientific output translates into practical, lived results.</p>
+        <div class="pillar-focus-label">Focus areas</div>
+        <p class="pillar-focus">R&amp;D investment · scientific output · innovation diffusion · entrepreneurial capacity</p>
+      </div>
+
+      <div class="pillar-card integrator">
+        <div class="pillar-num">03</div>
+        <h3 class="pillar-name">Integrator<em>Intelligence</em></h3>
+        <p class="pillar-desc">The capacity for institutions to work together. Where governance fragments — where agencies don't talk, where policy doesn't coordinate — even good intentions produce poor outcomes.</p>
+        <div class="pillar-focus-label">Focus areas</div>
+        <p class="pillar-focus">Governance effectiveness · public safety · cross-agency coordination · policy responsiveness</p>
+      </div>
+
+      <div class="pillar-card regenerative">
+        <div class="pillar-num">04</div>
+        <h3 class="pillar-name">Regenerative<em>Intelligence</em></h3>
+        <p class="pillar-desc">The capacity to restore rather than deplete. Climate resilience, ecological recovery, and the structural ability to operate within planetary limits — not just to mitigate harm.</p>
+        <div class="pillar-focus-label">Focus areas</div>
+        <p class="pillar-focus">Air quality · renewable energy · climate resilience · ecological restoration</p>
+      </div>
+
+      <div class="pillar-card connected">
+        <div class="pillar-num">05</div>
+        <h3 class="pillar-name">Connected<em>Intelligence</em></h3>
+        <p class="pillar-desc">The capacity for openness — to ideas, people, and information. Measured through international flows, cultural diversity, and the interoperability of digital and physical systems.</p>
+        <div class="pillar-focus-label">Focus areas</div>
+        <p class="pillar-focus">International integration · cultural diversity · data interoperability · network connectivity</p>
+      </div>
+
+      <div class="pillar-card healthy">
+        <div class="pillar-num">06</div>
+        <h3 class="pillar-name">Healthy Society<em>Intelligence</em></h3>
+        <p class="pillar-desc">The backbone. Health outcomes, healthcare access, and mental well-being — treated not as a separate sector, but as an integrated system shaped by every other urban decision.</p>
+        <div class="pillar-focus-label">Focus areas</div>
+        <p class="pillar-focus">Health outcomes · healthcare access · mental well-being · health equity</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     HOW IT WORKS — MECHANISM
+================================ -->
+<section class="section mechanism-section" id="mechanism">
+  <div class="container">
+    <div class="eyebrow gold">The mechanism</div>
+    <h2 class="section-title">What the CII <em>actually measures</em>.</h2>
+    <p class="lede">Most urban indices conflate outputs with capacity. The CII separates them — and that separation is what makes it diagnostic rather than performative.</p>
+
+    <div class="contrast-grid">
+
+      <div class="contrast-block against">
+        <span class="contrast-label">What it isn't</span>
+        <h3 class="contrast-title">A traditional ranking</h3>
+        <p class="contrast-desc">Most city indices declare winners and losers based on aggregated outputs. They reward cities that look good today, regardless of whether they're building or burning structural capacity.</p>
+        <p class="contrast-desc">A high GDP can mask social erosion. A clean air score can hide deepening inequalities. A "smart city" badge can sit on top of crumbling institutional trust.</p>
+        <p class="contrast-desc"><strong>Outputs without context create the illusion of progress while structural problems compound underneath.</strong></p>
+      </div>
+
+      <div class="contrast-block with">
+        <span class="contrast-label">What it is</span>
+        <h3 class="contrast-title">A capacity diagnostic</h3>
+        <p class="contrast-desc">The CII reveals whether a city has the structural conditions to learn — to detect signals early, coordinate responses, and adapt direction without losing coherence.</p>
+        <p class="contrast-desc">It surfaces hidden bottlenecks: where economic strength sits alongside Integrator failures, where Foundational fragility undermines every other pillar, where Connected openness creates resilience that doesn't show up in conventional metrics.</p>
+        <p class="contrast-desc"><strong>The CII identifies where small interventions, placed correctly, would create the largest long-term shift.</strong></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     SEVEN-STEP IMPROVEMENT PLAN
+================================ -->
+<section class="section plan-section" id="plan">
+  <div class="container">
+    <div class="plan-intro">
+      <div class="eyebrow">From diagnosis to action</div>
+      <h2 class="section-title">The seven-step <em>improvement plan</em>.</h2>
+      <p class="lede">Identifying a weak pillar is only the start. The CII Improvement Plan is the structured sequence that turns the diagnostic into a strategy — designed for compounding effects, not headline interventions.</p>
+    </div>
+
+    <div class="steps-flow">
+
+      <div class="step-row">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <div class="step-name">Choose the pillar</div>
+          <p class="step-desc">Select the primary area for improvement — not the easiest, not the most visible, but the one whose underperformance is creating the most structural fragility for the city as a whole.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <div class="step-name">Why this pillar?</div>
+          <p class="step-desc">Articulate the critical impact on quality of life. Define <em>how</em> this pillar's underperformance is producing fragility elsewhere — what it is upstream of.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <div class="step-name">Signals, not symptoms</div>
+          <p class="step-desc">Identify the <em>weak signals</em> that precede crisis — rising mental health issues, eroding trust, behavioural shifts in mobility — rather than reacting to the end-state crisis when it arrives.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <div class="step-name">What would improve if this strengthened?</div>
+          <p class="step-desc">Map the spillover effects into other pillars. Workforce productivity. Community trust. Institutional coherence. The pillar you strengthen rarely benefits alone — that's where compounding lives.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <div class="step-name">What is the risk of not acting?</div>
+          <p class="step-desc">Evaluate the systemic costs of inaction over a real time horizon — escalating healthcare expenditure, social fragmentation, loss of institutional capacity. The status quo is rarely free.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-number">06</div>
+        <div class="step-content">
+          <div class="step-name">First intelligent move</div>
+          <p class="step-desc">Define a small, manageable, measurable action. Not a master plan. A test. The point is to <em>see how the system responds</em> before committing scale.</p>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-number">07</div>
+        <div class="step-content">
+          <div class="step-name">Reflection &amp; sequencing</div>
+          <p class="step-desc">Acknowledge that intelligence is sequencing. Coordinate the move with Foundational and Integrator pillars to ensure a supportive environment. The right move at the wrong moment fails. The right move in sequence compounds.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     DATA FOUNDATIONS
+================================ -->
+<section class="section data-section" id="data">
+  <div class="container">
+    <div class="data-intro">
+      <div class="eyebrow gold">Data foundations</div>
+      <h2 class="section-title">Built on <em>reputable, comparable data</em>.</h2>
+      <p class="lede">The CII draws on internationally recognised datasets to ensure transparency, comparability, and methodological rigour. No proprietary scoring. No black-box weightings. Every indicator is traceable.</p>
+    </div>
+
+    <div class="data-grid">
+
+      <div class="data-item">
+        <div class="data-source-name">EU Regional Social Progress Index</div>
+        <div class="data-source-desc">The foundational frame — <em>basic needs, well-being, opportunity</em> — across European regions. Published by the European Commission.</div>
+      </div>
+
+      <div class="data-item">
+        <div class="data-source-name">OECD Regional Statistics</div>
+        <div class="data-source-desc">Economic and social indicators at the regional level. The standard reference for cross-country comparability in OECD member states.</div>
+      </div>
+
+      <div class="data-item">
+        <div class="data-source-name">Eurostat City Statistics</div>
+        <div class="data-source-desc">City-level data on health, transport, housing, and demographics. The most granular publicly available European urban dataset.</div>
+      </div>
+
+      <div class="data-item">
+        <div class="data-source-name">European Cities SDG Index</div>
+        <div class="data-source-desc">Performance across all 17 Sustainable Development Goals at city level. Sustainable Development Solutions Network &amp; Brabant Center.</div>
+      </div>
+
+      <div class="data-item">
+        <div class="data-source-name">EU Industrial R&amp;D Investment Scoreboard</div>
+        <div class="data-source-desc">Annual benchmark of top R&amp;D-investing companies. Used to assess innovation ecosystem strength at regional level.</div>
+      </div>
+
+      <div class="data-item">
+        <div class="data-source-name">European Regional Innovation Scoreboard</div>
+        <div class="data-source-desc">Innovation performance — patents, knowledge linkages, SME collaboration, intellectual assets — across European regions.</div>
+      </div>
+
+      <div class="data-item">
+        <div class="data-source-name">Arcadis Sustainable Cities Index</div>
+        <div class="data-source-desc">Cross-pillar urban sustainability assessment — people, planet, profit, progress — for global comparability.</div>
+      </div>
+
+      <div class="data-item">
+        <div class="data-source-name">European Cyclists' Federation &amp; mobility data</div>
+        <div class="data-source-desc">Mobility patterns and active transport infrastructure — strong proxies for both Regenerative and Healthy Society pillars.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     THE PLATFORM (coming)
+================================ -->
+<section class="section platform-section" id="platform">
+  <div class="container">
+    <div class="eyebrow gold">What's coming</div>
+    <h2 class="section-title">The interactive <em>platform</em>.</h2>
+    <p class="lede">The CII is becoming a live, explorable instrument — where every pillar, indicator, and city becomes directly readable, comparable, and applicable to your own context.</p>
+
+    <div class="platform-grid">
+
+      <div>
+        <div class="platform-features">
+
+          <div class="platform-feature">
+            <div class="platform-feature-name">Live city profiles</div>
+            <div class="platform-feature-text">All six pillars across the comparison group, readable cross-sectionally and over time</div>
+          </div>
+
+          <div class="platform-feature">
+            <div class="platform-feature-name">Cross-pillar analysis</div>
+            <div class="platform-feature-text">Visually explore how Foundational shapes Healthy Society, how Integrator influences Innovator — and every other relationship between them</div>
+          </div>
+
+          <div class="platform-feature">
+            <div class="platform-feature-name">Diagnostic toolkit</div>
+            <div class="platform-feature-text">The seven-step improvement plan, applied directly to live data — turning the framework from a concept into a working instrument</div>
+          </div>
+
+          <div class="platform-feature">
+            <div class="platform-feature-name">Research hypotheses</div>
+            <div class="platform-feature-text">For academic researchers: the questions and correlations the completed CII makes testable</div>
+          </div>
+
+          <div class="platform-feature">
+            <div class="platform-feature-name">City uploads</div>
+            <div class="platform-feature-text">Apply the framework to a city not yet in the comparison group — bring your own data, get a structural readout</div>
+          </div>
+
+        </div>
+
+        <div><span class="platform-tag">Interactive platform — coming soon</span></div>
+      </div>
+
+      <div>
+        <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 22px; line-height: 1.4; color: var(--cream); margin-bottom: 24px;">"The framework only matters if you can use it. The platform is what turns the CII from a thesis into a daily diagnostic."</p>
+
+        <p style="font-size: 14.5px; line-height: 1.65; color: rgba(248,245,238,0.75); margin-bottom: 12px;">If you'd like to be notified when the interactive platform opens — or if you'd like to be among the first cities or research groups using it in early access — get in touch.</p>
+
+        <a href="https://fatimebarbara.vision/en/contact/" class="platform-cta">Express interest →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     CONTINUE EXPLORING
+================================ -->
+<section class="explore-section" id="explore">
+  <div class="container">
+
+    <div style="max-width: 780px;">
+      <div class="eyebrow">Continue exploring</div>
+      <h2 class="section-title">Where the index <em>lives in practice</em>.</h2>
+      <p class="lede">The CII isn't a standalone document. It's the spine of a wider ecosystem — courses, the book, ongoing research. Here's where to go next.</p>
+    </div>
+
+    <div class="explore-grid">
+
+      <a href="https://fatimebarbara.vision/learning-hub/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Programme</div>
+          <h3 class="explore-title">Learning Hub</h3>
+          <p class="explore-desc">The mastercourse, the free introductory course, and the wider learning ecosystem built around the CII.</p>
+        </div>
+        <span class="explore-arrow">Visit the Hub →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/books-future-of-cities/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Foundations</div>
+          <h3 class="explore-title">The Future of Cities</h3>
+          <p class="explore-desc">The book where this framework took shape. The long argument behind the index — and the cases that make it live.</p>
+        </div>
+        <span class="explore-arrow">Read more →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/publications/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Research</div>
+          <h3 class="explore-title">Publications</h3>
+          <p class="explore-desc">Peer-reviewed articles, policy briefs, and reports — the underlying evidence base the CII draws on.</p>
+        </div>
+        <span class="explore-arrow">Browse publications →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/mastercourses" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Programmes</div>
+          <h3 class="explore-title">Mastercourses</h3>
+          <p class="explore-desc">Structured learning programmes for policymakers, researchers, corporate leaders, and university teams.</p>
+        </div>
+        <span class="explore-arrow">See all courses →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/artworks-uj/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Creative Side</div>
+          <h3 class="explore-title">Artworks</h3>
+          <p class="explore-desc">Where analytical work meets the visual. A different way of seeing cities — and the people inside them.</p>
+        </div>
+        <span class="explore-arrow">View the artworks →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/contact/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">Get in Touch</div>
+          <h3 class="explore-title">Work together</h3>
+          <p class="explore-desc">For research collaborations, city consultations, partnerships, or early access to the interactive platform.</p>
+        </div>
+        <span class="explore-arrow">Send a message →</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     BACK HOME LINK BAR
+================================ -->
+<div class="home-link-bar">
+  <a href="https://fatimebarbara.vision/en">Back to fatimebarbara.vision</a>
+</div>
+
+<div class="footer-note">
+  Where city intelligence becomes human — and humans become city-shapers.
+</div>
+
+</body>
+</html>
