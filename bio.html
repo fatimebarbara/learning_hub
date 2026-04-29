@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speaking & Bio — Dr. Fatime Barbara Hegyi</title>
+<meta name="description" content="Dr. Fatime Barbara Hegyi — author, urban visionary, and keynote speaker. Bridging science, data, and storytelling to help leaders build sustainable, inclusive, and human-centered cities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f8f5ee;
+  --paper: #fbf9f4;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #6a6a6a;
+  --sage: #3d5a3d;
+  --sage-dark: #2b412b;
+  --terracotta: #b85c38;
+  --terracotta-soft: #d4886a;
+  --gold: #c79a3e;
+  --rule: #d9d3c4;
+  --card: #ffffff;
+  --shadow: 0 1px 3px rgba(26,26,26,0.04), 0 12px 40px rgba(26,26,26,0.04);
+
+  /* Speech topic accents */
+  --t-greenprint: #5d8a5d;
+  --t-health: #c66a6a;
+  --t-learning: #c79a3e;
+  --t-data: #4a6a8c;
+  --t-corporate: #b85c38;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Work Sans', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+}
+
+.section { padding: 100px 0; position: relative; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.eyebrow.gold { color: var(--gold); }
+.eyebrow.terracotta { color: var(--terracotta); }
+.eyebrow.cream { color: rgba(248,245,238,0.85); }
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.section-title {
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage);
+}
+
+.lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 680px;
+}
+
+/* ===================================
+   HERO
+=================================== */
+.hero {
+  min-height: auto;
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,92,56,0.18), transparent 70%);
+  filter: blur(60px);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -15%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61,90,61,0.14), transparent 70%);
+  filter: blur(80px);
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.hero-content { max-width: 720px; }
+
+.display-title {
+  font-size: clamp(44px, 6vw, 78px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+
+.display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--terracotta);
+}
+
+.hero-question {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(20px, 2vw, 26px);
+  color: var(--ink-soft);
+  line-height: 1.35;
+  margin-bottom: 36px;
+  letter-spacing: -0.005em;
+}
+
+.hero-question strong {
+  color: var(--ink);
+  font-weight: 500;
+  font-style: normal;
+}
+
+.hero-lede {
+  font-size: 17.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+  font-weight: 300;
+  max-width: 580px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 16px 32px;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  border: 1.5px solid var(--ink);
+}
+
+.hero-cta::after {
+  content: "→";
+  font-size: 14px;
+  transition: transform 0.25s;
+}
+
+.hero-cta:hover {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+.hero-cta:hover::after { transform: translateX(4px); }
+
+.hero-portrait {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait-frame {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4/5;
+  background: url('https://fatimebarbara.github.io/learning_hub/speaking_ahws.jpg') center/cover no-repeat;
+  border: 1px solid var(--rule);
+  position: relative;
+}
+
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid var(--terracotta);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===================================
+   STICKY NAV
+=================================== */
+.nav-strip {
+  background: var(--ink);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.nav-strip-label {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--cream);
+  opacity: 0.7;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+
+.nav-links a:hover { border-bottom-color: var(--gold); }
+
+.nav-links .step-num {
+  font-family: 'Fraunces', serif;
+  color: var(--gold);
+  font-size: 11px;
+  font-style: italic;
+  text-transform: none;
+  margin-right: 6px;
+}
+
+/* ===================================
+   ABOUT / BIO PROSE
+=================================== */
+.about-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-quote-block {
+  position: sticky;
+  top: 100px;
+}
+
+.about-quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--ink);
+  border-left: 3px solid var(--terracotta);
+  padding-left: 32px;
+  letter-spacing: -0.005em;
+  margin-bottom: 36px;
+}
+
+.about-quote em {
+  color: var(--terracotta);
+  font-style: italic;
+}
+
+.about-text p {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+
+.about-text p:last-child { margin-bottom: 0; }
+
+.about-text strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.about-text em {
+  color: var(--terracotta);
+  font-style: italic;
+}
+
+/* ===================================
+   ENGAGEMENTS / NOTABLE MOMENTS
+=================================== */
+.engagements-section { background: var(--cream); }
+
+.engagements-intro {
+  margin-bottom: 64px;
+  max-width: 780px;
+}
+
+.engagements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.engagement-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.engagement-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-color: var(--paper);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--rule);
+}
+
+.engagement-body {
+  padding: 36px 36px 40px;
+  flex-grow: 1;
+}
+
+.engagement-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+  z-index: 2;
+}
+
+.engagement-card:hover::before { transform: scaleX(1); }
+
+.engagement-card:hover {
+  border-color: var(--sage);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 50px rgba(26,26,26,0.08);
+}
+
+.engagement-month {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--terracotta);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.engagement-name {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.engagement-name em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage);
+}
+
+.engagement-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.engagement-desc strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ===================================
+   SPEECH TOPICS — the heart of the page
+=================================== */
+.topics-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+}
+
+.topics-intro {
+  margin-bottom: 64px;
+  max-width: 820px;
+}
+
+.topic-block {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  margin-bottom: 24px;
+  padding: 48px 56px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 36px;
+  transition: all 0.3s;
+}
+
+.topic-block:last-child { margin-bottom: 0; }
+
+.topic-block::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--topic-color);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.topic-block:hover::before { transform: scaleY(1); }
+
+.topic-block:hover {
+  border-color: var(--topic-color);
+  box-shadow: 0 14px 36px rgba(26,26,26,0.06);
+}
+
+.topic-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--topic-color);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.topic-content { padding-top: 4px; }
+
+.topic-eyebrow {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--topic-color);
+  margin-bottom: 12px;
+}
+
+.topic-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.topic-subtitle {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--topic-color);
+  line-height: 1.35;
+  margin-bottom: 22px;
+}
+
+.topic-desc {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  max-width: 780px;
+}
+
+.topic-desc:last-child { margin-bottom: 0; }
+
+.topic-desc strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.topic-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 6px 14px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.topic-tag::before {
+  content: "✦";
+  color: var(--topic-color);
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+}
+
+/* Adapts-for block — replaces the simple tag.
+   Shows audience tracks each talk works for, signaling
+   the bridge between topical talks and the mastercourse audiences. */
+.topic-adapts {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dotted var(--rule);
+}
+
+.topic-adapts-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--topic-color);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.topic-adapts-list {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+}
+
+.topic-adapts-list strong {
+  font-weight: 500;
+  font-style: normal;
+  color: var(--ink);
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* ===================================
+   CREDENTIALS STRIP — fast credibility scan
+   for cold visitors / conference programmers
+=================================== */
+.credentials-strip {
+  background: var(--cream);
+  padding: 64px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.credentials-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.credentials-intro-text {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  background: var(--card);
+}
+
+.credential-item {
+  padding: 28px 24px;
+  border-right: 1px solid var(--rule);
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.credential-item:last-child { border-right: none; }
+.credential-item:hover { background: var(--paper); }
+
+.credential-mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--terracotta);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+.credential-name {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+
+.credential-context {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+/* Color assignments */
+.topic-block.greenprint { --topic-color: var(--t-greenprint); }
+.topic-block.health { --topic-color: var(--t-health); }
+.topic-block.learning { --topic-color: var(--t-learning); }
+.topic-block.data { --topic-color: var(--t-data); }
+.topic-block.corporate { --topic-color: var(--t-corporate); }
+
+/* ===================================
+   PHOTO STRIP — compact, 2 images
+=================================== */
+.gallery-section {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 72px 0;
+}
+
+.gallery-section .section-title { color: var(--cream); }
+.gallery-section .section-title em { color: var(--gold); }
+.gallery-section .lede { color: rgba(248,245,238,0.7); }
+
+.gallery-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+  max-width: 880px;
+}
+
+.gallery-item {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: rgba(248,245,238,0.05);
+  border: 1px solid rgba(248,245,238,0.1);
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover img { transform: scale(1.04); }
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 18px;
+  background: linear-gradient(to top, rgba(26,26,26,0.85), transparent);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--cream);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-caption { opacity: 1; }
+
+/* ===================================
+   AUDIENCES — who Fatime speaks to
+=================================== */
+.audiences-section { background: var(--cream); }
+
+.audiences-intro {
+  margin-bottom: 56px;
+  max-width: 780px;
+}
+
+.audiences-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  background: var(--card);
+}
+
+.audience-item {
+  padding: 32px 28px;
+  border-right: 1px solid var(--rule);
+  transition: background 0.25s;
+}
+
+.audience-item:last-child { border-right: none; }
+
+.audience-item:hover { background: var(--paper); }
+
+.audience-icon {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--terracotta);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.audience-name {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.005em;
+}
+
+.audience-desc {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ===================================
+   BOOKING / CTA SECTION
+=================================== */
+.booking-section {
+  background: var(--sage-dark);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-section::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(199,154,62,0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.booking-section .eyebrow { color: var(--gold); }
+.booking-section .section-title { color: var(--cream); }
+.booking-section .section-title em { color: var(--gold); }
+
+.booking-quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.4;
+  color: rgba(248,245,238,0.92);
+  margin-bottom: 28px;
+  font-weight: 300;
+  border-left: 2px solid var(--gold);
+  padding-left: 24px;
+}
+
+.booking-text {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(248,245,238,0.78);
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+
+.booking-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 16px 36px;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+
+.booking-cta::after {
+  content: "→";
+  font-size: 14px;
+  transition: transform 0.25s;
+}
+
+.booking-cta:hover {
+  background: var(--cream);
+}
+
+.booking-cta:hover::after { transform: translateX(4px); }
+
+.booking-list {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(248,245,238,0.12);
+  padding: 36px 32px;
+}
+
+.booking-list-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--gold);
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.booking-format {
+  padding: 16px 0;
+  border-bottom: 1px dotted rgba(248,245,238,0.12);
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  align-items: baseline;
+}
+
+.booking-format:last-child { border-bottom: none; padding-bottom: 0; }
+.booking-format:first-child { padding-top: 0; }
+
+.booking-format-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.booking-format-text {
+  font-size: 14.5px;
+  color: rgba(248,245,238,0.85);
+  line-height: 1.55;
+}
+
+/* ===================================
+   CONTINUE EXPLORING
+=================================== */
+.explore-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  padding: 100px 0;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.explore-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.explore-card:hover {
+  border-color: var(--sage);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(26,26,26,0.06);
+}
+
+.explore-card:hover::before { transform: scaleX(1); }
+
+.explore-eyebrow {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 14px;
+}
+
+.explore-title {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.explore-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.explore-arrow {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sage);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.25s;
+}
+
+.explore-card:hover .explore-arrow { gap: 14px; }
+
+/* ===================================
+   FOOTER
+=================================== */
+.home-link-bar {
+  background: var(--ink);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.home-link-bar a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  transition: gap 0.25s;
+}
+
+.home-link-bar a:hover { gap: 18px; }
+
+.home-link-bar a::before {
+  content: "←";
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  color: var(--gold);
+}
+
+.footer-note {
+  padding: 36px 32px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--rule);
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-portrait { order: -1; }
+  .portrait-frame { max-width: 320px; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-quote-block { position: static; }
+  .engagements-grid { grid-template-columns: 1fr; }
+  .credentials-grid { grid-template-columns: 1fr 1fr; }
+  .credential-item:nth-child(2n) { border-right: none; }
+  .credential-item:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  .topic-block { grid-template-columns: 1fr; gap: 16px; padding: 36px 28px; }
+  .topic-num { font-size: 42px; }
+  .gallery-strip { grid-template-columns: 1fr; }
+  .audiences-grid { grid-template-columns: 1fr 1fr; }
+  .audience-item:nth-child(2n) { border-right: none; }
+  .audience-item:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  .booking-grid { grid-template-columns: 1fr; gap: 36px; }
+  .explore-grid { grid-template-columns: 1fr; }
+  .section { padding: 72px 0; }
+  .nav-strip { position: static; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 11px; }
+}
+
+@media (max-width: 560px) {
+  .container { padding: 0 20px; }
+  .audiences-grid { grid-template-columns: 1fr; }
+  .audience-item { border-right: none !important; border-bottom: 1px solid var(--rule); }
+  .audience-item:last-child { border-bottom: none; }
+  .credentials-grid { grid-template-columns: 1fr; }
+  .credential-item { border-right: none !important; border-bottom: 1px solid var(--rule); }
+  .credential-item:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================================
+     HERO
+================================ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="hero-content">
+        <div class="eyebrow terracotta">Speaking · Bio</div>
+        <h1 class="display-title">Author. Urban visionary. <em>Catalyst for change.</em></h1>
+
+        <p class="hero-question">In an era defined by rapid urban evolution — <strong>how can city leaders, innovators, and citizens prepare for the future?</strong></p>
+
+        <p class="hero-lede">Dr. Fatime Barbara Hegyi is a leading voice on the future of cities. She bridges science, data, and storytelling to help decision-makers build more sustainable, inclusive, and human-centered communities.</p>
+
+        <a href="https://fatimebarbara.vision/en/contact/" class="hero-cta">Invite Fatime to speak</a>
+      </div>
+
+      <div class="hero-portrait">
+        <div class="portrait-frame" role="img" aria-label="Dr. Fatime Barbara Hegyi"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     STICKY NAV
+================================ -->
+<nav class="nav-strip">
+  <div class="container nav-strip-inner">
+    <div class="nav-strip-label">In this page →</div>
+    <ul class="nav-links">
+      <li><a href="#about"><span class="step-num">01</span>About Fatime</a></li>
+      <li><a href="#engagements"><span class="step-num">02</span>Recent engagements</a></li>
+      <li><a href="#topics"><span class="step-num">03</span>Speech topics</a></li>
+      <li><a href="#audiences"><span class="step-num">04</span>Audiences</a></li>
+      <li><a href="#booking"><span class="step-num">05</span>Booking</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================================
+     ABOUT
+================================ -->
+<section class="section about-section" id="about">
+  <div class="container">
+    <div class="eyebrow">About Fatime</div>
+    <h2 class="section-title">Bridging <em>science, data, and storytelling</em>.</h2>
+
+    <div class="about-grid" style="margin-top: 56px;">
+
+      <div class="about-quote-block">
+        <blockquote class="about-quote">
+          In a world where the future of humanity is inseparable from the future of our cities, Fatime Barbara stands as <em>a visionary connector</em>.
+        </blockquote>
+      </div>
+
+      <div class="about-text">
+        <p>Dr. Fatime Barbara Hegyi is a leading voice on the future of cities — equipping individuals and institutions to reimagine the places we live, work, and thrive.</p>
+
+        <p>Her book, <strong><em>The Future of Cities: A Data-Driven Approach to Tackling Grand Challenges and Building Sustainable, Resilient Communities</em></strong>, offers a blueprint for navigating complexity — providing city leaders, policymakers, and organisations with practical frameworks to drive measurable progress.</p>
+
+        <p>Renowned for her <strong>engaging, insight-rich presentations</strong>, Fatime translates complex urban challenges into actionable strategies. Her keynotes and workshops inspire audiences across government, academia, and business — from mayors seeking to drive social progress to corporate innovators aligning strategy with sustainability and societal impact.</p>
+
+        <p>Beyond her speaking engagements, Fatime leads initiatives that integrate <strong>data, design, and dialogue</strong> to reshape the way cities learn and evolve. Her work emphasises the interconnectedness of urban systems — health, education, mobility, technology, and governance — showing how political will can be treated as a renewable resource when guided by evidence and shared purpose.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     RECENT ENGAGEMENTS
+================================ -->
+<section class="section engagements-section" id="engagements">
+  <div class="container">
+
+    <div class="engagements-intro">
+      <div class="eyebrow gold">Recent engagements</div>
+      <h2 class="section-title">Where Fatime <em>has spoken recently</em>.</h2>
+      <p class="lede">Two flagship moments from 2025 — institutional, scientific, and human-centred. Each captured a different angle of the wider work on cities, health, and the future.</p>
+    </div>
+
+    <div class="engagements-grid">
+
+      <div class="engagement-card">
+        <div class="engagement-image" style="background-image: url('https://fatimebarbara.github.io/learning_hub/speaking_ep.jpg');" role="img" aria-label="European Parliament book presentation"></div>
+        <div class="engagement-body">
+          <div class="engagement-month">October 2025</div>
+          <h3 class="engagement-name">European Parliament <em>book presentation</em></h3>
+          <p class="engagement-desc">Fatime presented <strong>The Future of Cities</strong> at the European Parliament, where her ideas sparked a policy hearing on the future of cities. The session brought together MEPs, EU institutional leaders, and policy heads — including DG REGIO, the EPP Group, Eurocities, and the Committee of Regions Group.</p>
+        </div>
+      </div>
+
+      <div class="engagement-card">
+        <div class="engagement-image" style="background-image: url('https://fatimebarbara.github.io/learning_hub/speaking_ahws2.jpg');" role="img" aria-label="Atlantic Health and Wellness Summit keynote"></div>
+        <div class="engagement-body">
+          <div class="engagement-month">2025</div>
+          <h3 class="engagement-name">Atlantic <em>Health &amp; Wellness Summit</em></h3>
+          <p class="engagement-desc">A keynote connecting <strong>health, innovation, and city systems</strong> — demonstrating how the well-being of people and the sustainability of places are inseparable. The talk traced how urban design choices upstream determine health outcomes downstream.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     CREDENTIALS STRIP
+================================ -->
+<section class="credentials-strip">
+  <div class="container">
+    <div class="credentials-intro">
+      <div class="credentials-intro-text">Trusted by institutions, publishers, and policy bodies across Europe</div>
+    </div>
+
+    <div class="credentials-grid">
+      <div class="credential-item">
+        <div class="credential-mark">Author</div>
+        <div class="credential-name">The Future of Cities</div>
+        <div class="credential-context">Available worldwide · 2025</div>
+      </div>
+
+      <div class="credential-item">
+        <div class="credential-mark">Featured</div>
+        <div class="credential-name">European Parliament</div>
+        <div class="credential-context">Dedicated book hearing · October 2025</div>
+      </div>
+
+      <div class="credential-item">
+        <div class="credential-mark">Profiled in</div>
+        <div class="credential-name">Forbes</div>
+        <div class="credential-context">Leadership Strategy · 2025</div>
+      </div>
+
+      <div class="credential-item">
+        <div class="credential-mark">Researcher at</div>
+        <div class="credential-name">Joint Research Centre</div>
+        <div class="credential-context">European Commission</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     SPEECH TOPICS
+================================ -->
+<section class="section topics-section" id="topics">
+  <div class="container">
+
+    <div class="topics-intro">
+      <div class="eyebrow terracotta">Speech topics</div>
+      <h2 class="section-title">Five talks. <em>Shaping the cities of tomorrow.</em></h2>
+      <p class="lede">Each topic emerges from the research and the book — adapted to the audience, the context, and the moment. From keynote stages to closed-door policy roundtables.</p>
+    </div>
+
+    <!-- TOPIC 01: DATA — broadest appeal, strong corporate + policy hook -->
+    <div class="topic-block data">
+      <div class="topic-num">01</div>
+      <div class="topic-content">
+        <div class="topic-eyebrow">Data · Analytics · Smart cities</div>
+        <h3 class="topic-title">Decoding the Urban DNA</h3>
+        <p class="topic-subtitle">How data is building smarter, more human-centered cities.</p>
+
+        <p class="topic-desc">In the age of big data, cities are <strong>living organisms of information</strong>. Fatime unlocks the secrets of "Decoding the Urban DNA," revealing how data analytics can revolutionise urban planning and management.</p>
+
+        <p class="topic-desc">Learn how to harness the power of data to optimise infrastructure, enhance public services, create personalised urban experiences, and improve the lives of citizens. Discover how to transform raw data into actionable insights that drive smarter, more efficient, and more human-centered cities.</p>
+
+        <div class="topic-adapts">
+          <span class="topic-adapts-label">Adapts for</span>
+          <div class="topic-adapts-list"><strong>Policymakers</strong> seeking evidence-based decision frameworks · <strong>Corporate leaders</strong> exploring data-driven urban strategy · Smart-city summits · Tech &amp; analytics events · Public-sector innovation conferences</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPIC 02: CORPORATE — explicit corporate growth + impact framing -->
+    <div class="topic-block corporate">
+      <div class="topic-num">02</div>
+      <div class="topic-content">
+        <div class="topic-eyebrow">Business · Innovation · Strategy</div>
+        <h3 class="topic-title">Urban Innovation</h3>
+        <p class="topic-subtitle">Data-driven strategies for corporate growth and social impact.</p>
+
+        <p class="topic-desc">The cities of the future will be shaped by those who embrace innovation. Fatime presents a forward-looking perspective on how <strong>corporations can become key players in building the city of tomorrow</strong>.</p>
+
+        <p class="topic-desc">Discover how data reveals emerging urban trends and unmet needs, creating opportunities for businesses to develop innovative solutions. Explore strategies for fostering collaboration between businesses, governments, and communities to create a more sustainable, resilient, and inclusive urban future.</p>
+
+        <div class="topic-adapts">
+          <span class="topic-adapts-label">Adapts for</span>
+          <div class="topic-adapts-list"><strong>Corporate offsites</strong> &amp; leadership retreats · <strong>ESG &amp; sustainability programmes</strong> at scale · Boardroom strategy sessions · Industry summits · Cross-sector partnership convenings</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPIC 03: GREENPRINT -->
+    <div class="topic-block greenprint">
+      <div class="topic-num">03</div>
+      <div class="topic-content">
+        <div class="topic-eyebrow">Sustainability · Climate · Urban design</div>
+        <h3 class="topic-title">The Greenprint Revolution</h3>
+        <p class="topic-subtitle">Envisioning and building the sustainable city of tomorrow.</p>
+
+        <p class="topic-desc">The climate crisis demands a radical shift in how we design and manage our cities. Fatime's <strong>Greenprint Revolution</strong> offers a visionary framework for creating truly sustainable urban environments.</p>
+
+        <p class="topic-desc">Discover how to leverage data-driven insights and empower community-led initiatives to build cities that meet the needs of present and future generations. Learn how to create urban spaces that are models of ecological balance, social equity, and long-term prosperity — a lasting green legacy.</p>
+
+        <div class="topic-adapts">
+          <span class="topic-adapts-label">Adapts for</span>
+          <div class="topic-adapts-list"><strong>Policymakers</strong> shaping climate &amp; environmental strategy · <strong>Corporate ESG</strong> programmes &amp; sustainability summits · Mayor convenings · Climate conferences · University environmental policy programmes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPIC 04: HEALTH -->
+    <div class="topic-block health">
+      <div class="topic-num">04</div>
+      <div class="topic-content">
+        <div class="topic-eyebrow">Health · Well-being · Urban planning</div>
+        <h3 class="topic-title">Cities and Health</h3>
+        <p class="topic-subtitle">How healthier people create healthier cities.</p>
+
+        <p class="topic-desc">The future of health walks the streets we walk, savours the food we can reach, breathes the air of our green spaces. <strong>It's not just about medicine — it's about the city itself.</strong></p>
+
+        <p class="topic-desc">Fatime explores the link between urban design and human well-being. Learn how to engineer cities that promote physical and mental health through accessible green spaces, active transportation, and community-focused initiatives. Discover how healthier citizens contribute to a more vibrant and resilient urban fabric.</p>
+
+        <div class="topic-adapts">
+          <span class="topic-adapts-label">Adapts for</span>
+          <div class="topic-adapts-list"><strong>Health-system policy</strong> bodies &amp; public-health convenings · <strong>Corporate wellness</strong> &amp; insurance summits · Hospital networks · Wellness conferences · Cross-sector health-and-cities programmes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPIC 05: LEARNING -->
+    <div class="topic-block learning">
+      <div class="topic-num">05</div>
+      <div class="topic-content">
+        <div class="topic-eyebrow">Education · Innovation · Lifelong learning</div>
+        <h3 class="topic-title">The Urban Learning Lab</h3>
+        <p class="topic-subtitle">Data-driven education for urban transformation.</p>
+
+        <p class="topic-desc">Education is the key to unlocking human potential and building thriving cities. Fatime presents a data-driven approach to transforming urban spaces into <strong>dynamic "Learning Labs,"</strong> fostering lifelong learning and innovation.</p>
+
+        <p class="topic-desc">Explore how data insights inform strategies that fuel well-being, expand opportunities, improve health outcomes, and empower individuals to contribute to a thriving society. Building cities where every street corner is a potential classroom creates a ripple effect of positive change.</p>
+
+        <div class="topic-adapts">
+          <span class="topic-adapts-label">Adapts for</span>
+          <div class="topic-adapts-list"><strong>University &amp; academic leadership</strong> retreats · <strong>Education policymakers</strong> shaping system-level reform · EdTech conferences · Lifelong-learning summits · Foundations &amp; philanthropy convenings</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     PHOTO STRIP (compact)
+================================ -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="eyebrow gold">From the stage</div>
+    <h2 class="section-title">Where the work <em>meets the room</em>.</h2>
+    <p class="lede">Moments from recent keynotes and convenings across Europe.</p>
+
+    <div class="gallery-strip">
+      <div class="gallery-item">
+        <img src="https://fatimebarbara.github.io/learning_hub/speaking_eit.JPG" alt="Dr. Fatime Barbara Hegyi at an EIT event">
+        <div class="gallery-caption">EIT · innovation convening</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://fatimebarbara.github.io/learning_hub/speaking_ep2.jpg" alt="Dr. Fatime Barbara Hegyi at the European Parliament">
+        <div class="gallery-caption">European Parliament · panel discussion</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     AUDIENCES
+================================ -->
+<section class="section audiences-section" id="audiences">
+  <div class="container">
+
+    <div class="audiences-intro">
+      <div class="eyebrow">Who Fatime speaks to</div>
+      <h2 class="section-title">Audiences across <em>government, academia, business</em>.</h2>
+      <p class="lede">Each talk is adapted to the audience — the framing, the examples, the takeaways. Same intellectual core, calibrated for the room.</p>
+    </div>
+
+    <div class="audiences-grid">
+
+      <div class="audience-item">
+        <div class="audience-icon">①</div>
+        <div class="audience-name">Policymakers</div>
+        <div class="audience-desc">Strategic foresight, evidence-based frameworks, and how to design policy that learns from its own outcomes.</div>
+      </div>
+
+      <div class="audience-item">
+        <div class="audience-icon">②</div>
+        <div class="audience-name">Corporate leaders</div>
+        <div class="audience-desc">For executives aligning business strategy with sustainability, innovation ecosystems, and societal impact.</div>
+      </div>
+
+      <div class="audience-item">
+        <div class="audience-icon">③</div>
+        <div class="audience-name">Mayors &amp; city leaders</div>
+        <div class="audience-desc">For those translating urban vision into measurable progress — from social mobility to climate adaptation.</div>
+      </div>
+
+      <div class="audience-item">
+        <div class="audience-icon">④</div>
+        <div class="audience-name">Academia &amp; researchers</div>
+        <div class="audience-desc">Connecting urban research to action — across innovation studies, regional development, public health, and beyond.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     BOOKING CTA
+================================ -->
+<section class="section booking-section" id="booking">
+  <div class="container">
+
+    <div class="booking-grid">
+
+      <div>
+        <div class="eyebrow gold">Booking &amp; collaboration</div>
+        <h2 class="section-title">Invite Fatime to <em>your stage</em>.</h2>
+
+        <blockquote class="booking-quote">
+          "Between data and dreams, we find the courage to reimagine our cities — and ourselves."
+        </blockquote>
+
+        <p class="booking-text">Available for keynotes, fireside conversations, panels, workshops, masterclasses, and policy roundtables — across Europe and beyond. Topics, length, and format are adapted to the audience and the moment.</p>
+
+        <a href="https://fatimebarbara.vision/en/contact/" class="booking-cta">Send a message</a>
+      </div>
+
+      <div>
+        <div class="booking-list">
+          <div class="booking-list-title">Common formats</div>
+
+          <div class="booking-format">
+            <div class="booking-format-label">Keynote</div>
+            <div class="booking-format-text">30–60 minutes · Visionary framing for high-level audiences</div>
+          </div>
+
+          <div class="booking-format">
+            <div class="booking-format-label">Panel</div>
+            <div class="booking-format-text">As contributor or moderator · Cross-disciplinary urban conversations</div>
+          </div>
+
+          <div class="booking-format">
+            <div class="booking-format-label">Workshop</div>
+            <div class="booking-format-text">Half-day or full-day · Hands-on, framework-based, with the leadership team</div>
+          </div>
+
+          <div class="booking-format">
+            <div class="booking-format-label">Masterclass</div>
+            <div class="booking-format-text">Multi-session · For policy bodies, corporate teams, university programmes</div>
+          </div>
+
+          <div class="booking-format">
+            <div class="booking-format-label">Roundtable</div>
+            <div class="booking-format-text">Closed-door · Strategic foresight for institutional decision-makers</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     CONTINUE EXPLORING
+================================ -->
+<section class="explore-section" id="explore">
+  <div class="container">
+
+    <div style="max-width: 780px;">
+      <div class="eyebrow">Continue exploring</div>
+      <h2 class="section-title">Where the work <em>extends from here</em>.</h2>
+      <p class="lede">The speaking practice draws on the book, the framework, and the wider research ecosystem. Here's where to dig deeper.</p>
+    </div>
+
+    <div class="explore-grid">
+
+      <a href="https://fatimebarbara.vision/en/books-future-of-cities/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Foundations</div>
+          <h3 class="explore-title">The Future of Cities</h3>
+          <p class="explore-desc">The book that anchors every keynote. Featured at the European Parliament, profiled in Forbes.</p>
+        </div>
+        <span class="explore-arrow">Read more →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/city-intelligence-index/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Framework</div>
+          <h3 class="explore-title">City Intelligence Index</h3>
+          <p class="explore-desc">The diagnostic instrument referenced across multiple talks — six pillars, 150 indicators, mapped across European cities.</p>
+        </div>
+        <span class="explore-arrow">Explore the index →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/learning-hub/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Programme</div>
+          <h3 class="explore-title">Learning Hub</h3>
+          <p class="explore-desc">For audiences wanting more than a keynote — structured courses that turn the ideas into practice.</p>
+        </div>
+        <span class="explore-arrow">Visit the Hub →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/publications/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Research</div>
+          <h3 class="explore-title">Publications</h3>
+          <p class="explore-desc">Peer-reviewed articles, encyclopedia chapters, and policy publications underlying the keynotes.</p>
+        </div>
+        <span class="explore-arrow">Browse publications →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/artworks-uj/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Creative Side</div>
+          <h3 class="explore-title">Artworks</h3>
+          <p class="explore-desc">Where analytical work meets the visual — including the hand-painted cover artwork of the book.</p>
+        </div>
+        <span class="explore-arrow">View the artworks →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/contact/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">Get in Touch</div>
+          <h3 class="explore-title">Send a message</h3>
+          <p class="explore-desc">For speaking enquiries, partnerships, and collaboration on cities, leadership, and urban transformation.</p>
+        </div>
+        <span class="explore-arrow">Contact Fatime →</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     BACK HOME LINK BAR
+================================ -->
+<div class="home-link-bar">
+  <a href="https://fatimebarbara.vision/en">Back to fatimebarbara.vision</a>
+</div>
+
+<div class="footer-note">
+  Between data and dreams, we find the courage to reimagine our cities — and ourselves.
+</div>
+
+</body>
+</html>
