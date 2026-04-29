@@ -44,12 +44,8 @@ body {
 =================================== */
 .container {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  width: 100%;
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
 .section {
@@ -134,10 +130,12 @@ h1, h2, h3 {
    HERO
 =================================== */
 .hero {
-  min-height: auto;
+  min-height: 72vh;
   display: flex;
   align-items: center;
-  padding: 80px 0 60px;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-bg {
@@ -174,7 +172,6 @@ h1, h2, h3 {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 960px;
   width: 100%;
 }
 
@@ -721,6 +718,192 @@ h1, h2, h3 {
   order: -1;
 }
 
+/* ===================================
+   FEATURE CARDS (CII + Toolkit pair)
+=================================== */
+.feature-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--feature-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.feature-card:hover::before { transform: scaleX(1); }
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 50px rgba(26,26,26,0.08);
+  border-color: var(--feature-accent);
+}
+
+/* CII variant — sage-tinted background to stand out tastefully */
+.feature-card.cii {
+  --feature-accent: var(--sage);
+  background: linear-gradient(165deg, #e8efe5 0%, #f4f1e6 100%);
+  border-color: var(--sage-light);
+}
+
+.feature-card.cii::after {
+  content: "✦";
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--sage);
+  opacity: 0.4;
+  font-size: 22px;
+}
+
+.feature-card.toolkit {
+  --feature-accent: var(--gold);
+}
+
+.feature-eyebrow {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--feature-accent);
+  margin-bottom: 14px;
+}
+
+.feature-title {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.feature-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--feature-accent);
+}
+
+.feature-subtitle {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.feature-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+
+.feature-desc strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.feature-desc:last-of-type { margin-bottom: 24px; }
+
+.feature-highlights {
+  list-style: none;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+.feature-highlights li {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  padding: 6px 0 6px 20px;
+  position: relative;
+}
+
+.feature-highlights li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  color: var(--feature-accent);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.feature-highlights li strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.feature-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 13px 24px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  border: 1.5px solid var(--ink);
+  transition: all 0.25s;
+}
+
+.feature-cta::after {
+  content: "→";
+  font-size: 14px;
+  transition: transform 0.25s;
+}
+
+.feature-cta:hover {
+  background: var(--feature-accent);
+  border-color: var(--feature-accent);
+}
+
+.feature-cta:hover::after { transform: translateX(3px); }
+
+.feature-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--feature-accent);
+  padding: 4px 10px;
+  border: 1px solid var(--feature-accent);
+  margin-bottom: 16px;
+  background: rgba(255,255,255,0.5);
+}
+
 .tool-content h3 {
   font-size: clamp(30px, 3.5vw, 44px);
   font-weight: 400;
@@ -774,7 +957,6 @@ h1, h2, h3 {
 .tool-image {
   background: var(--paper);
   border: 1px solid var(--rule);
-  padding: 48px;
   aspect-ratio: 1;
   display: flex;
   align-items: center;
@@ -783,18 +965,10 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
-.tool-image::before {
-  content: "";
-  position: absolute;
-  top: 16px; left: 16px; right: 16px; bottom: 16px;
-  border: 1px solid var(--rule);
-  pointer-events: none;
-}
-
 .tool-image img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: relative;
   z-index: 2;
 }
@@ -946,73 +1120,27 @@ h1, h2, h3 {
 
 .book-layout {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 80px;
   align-items: center;
 }
 
 .book-visual {
-  width: 280px;
-  aspect-ratio: 2/3;
-  background: linear-gradient(145deg, #5d7a5d, #2b412b);
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 4/5;
+  background: url('https://fatimebarbara.github.io/learning_hub/website_bookphoto.jpg') center/cover no-repeat;
+  background-color: var(--paper);
   position: relative;
   box-shadow:
-    -4px 4px 0 rgba(26,26,26,0.06),
-    20px 30px 60px rgba(26,26,26,0.12);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 36px 28px;
-  color: var(--cream);
+    -4px 4px 0 rgba(26,26,26,0.04),
+    20px 30px 60px rgba(26,26,26,0.14);
+  justify-self: end;
+  order: 2;
 }
 
-.book-visual::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: rgba(0,0,0,0.15);
-}
-
-.book-visual .book-label {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-
-.book-visual .book-title {
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-}
-
-.book-visual .book-author {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 14px;
-  font-weight: 300;
-  opacity: 0.85;
-}
-
-.book-visual .book-ornament {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  border: 1px solid rgba(248,245,238,0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 28px;
-  color: rgba(248,245,238,0.5);
+.book-content {
+  order: 1;
 }
 
 .book-content h3 {
@@ -1534,12 +1662,15 @@ h1, h2, h3 {
   }
   .tool-block.reverse .tool-image { order: 0; }
 
+  .feature-cards-grid { grid-template-columns: 1fr; }
+
   .book-layout {
     grid-template-columns: 1fr;
     gap: 48px;
     text-align: center;
   }
-  .book-visual { margin: 0 auto; }
+  .book-visual { margin: 0 auto; justify-self: center; order: 1; }
+  .book-content { order: 2; }
   .book-quote { text-align: left; }
 
   .path-grid { grid-template-columns: 1fr 1fr; }
@@ -1700,7 +1831,7 @@ h1, h2, h3 {
       </div>
 
       <div class="card-footer">
-        <div class="price-line"><strong>Free</strong> </div>
+        <div class="price-line"><strong>Free</strong> · No credit card required</div>
         <a href="https://future-of-cities-academy.learnworlds.com/course/cities-are-alive" class="cta-button">Start the course</a>
       </div>
     </article>
@@ -1709,14 +1840,14 @@ h1, h2, h3 {
     <article class="course-card paid">
       <header class="card-header">
         <span class="badge badge-paid">Mastercourse · Live</span>
-        <h3 class="course-title">City Intelligence for policymakers and researchers</h3>
-        <p class="course-tagline">Built around the City Intelligence Index — six pillars, 150 indicators, mapped across European cities.</p>
+        <h3 class="course-title">City Intelligence</h3>
+        <p class="course-tagline">For policymakers and researchers. Built around the City Intelligence Index — six pillars, 150 indicators, mapped across European cities.</p>
       </header>
 
       <div class="card-body-fullwidth">
         <div class="overview-header">
           <div class="overview-title">Course overview &amp; introduction video</div>
-          <div class="overview-hint">Interactive · Scroll to explore</div>
+          <div class="overview-hint">Interactive · Includes intro video · Scroll to explore</div>
         </div>
         <div class="course-overview-frame-wide">
           <iframe 
@@ -1729,7 +1860,7 @@ h1, h2, h3 {
       </div>
 
       <div class="card-footer">
-        <div class="price-line"><strong>Self-paced</strong> · Lifetime access · </div>
+        <div class="price-line"><strong>Self-paced</strong> · Lifetime access · Built around the CII</div>
         <a href="https://future-of-cities-academy.learnworlds.com/course/city-intelligence-policy-research" class="cta-button">Enrol in the mastercourse</a>
       </div>
     </article>
@@ -1746,7 +1877,38 @@ h1, h2, h3 {
     <div style="max-width: 780px;">
       <div class="eyebrow gold">Programmes by audience</div>
       <h2 class="section-title">City intelligence, <em>built for every kind of decision-maker</em>.</h2>
-      <p class="lede">Mastercourses tailored to the specific audiences who shape cities in different ways. Some are live, some in development, some open for collaboration.</p>
+      <p class="lede">The flagship mastercourse sets the foundation. These are the variants — each tailored to the specific audiences who shape cities in different ways. Some are live, some in development, some open for collaboration.</p>
+    </div>
+
+    <!-- CII Interactive Platform Callout -->
+    <div class="cii-callout">
+      <div class="cii-callout-grid">
+        <div>
+          <div class="cii-callout-label">The central instrument</div>
+          <h3 class="cii-callout-title">The <em>City Intelligence Index</em> — interactive platform</h3>
+          <p class="cii-callout-desc">An interactive platform where every pillar, indicator, and city in the comparison group becomes directly explorable. Run cross-pillar diagnostics, track trajectories over time, and apply the framework to your own city in your own context.</p>
+          <a href="https://fatimebarbara.vision/en/city-intelligence-index/" class="cii-callout-link">Explore the index →</a>
+          <div><span class="cii-coming-tag">Interactive platform — coming soon</span></div>
+        </div>
+        <div class="cii-callout-features">
+          <div class="cii-feature-item">
+            <div class="cii-feature-name">Live city profiles</div>
+            <div class="cii-feature-text">All six pillars, all comparison cities — readable cross-sectionally and over time</div>
+          </div>
+          <div class="cii-feature-item">
+            <div class="cii-feature-name">Cross-pillar analysis</div>
+            <div class="cii-feature-text">Visually explore how Foundational shapes Healthy Society, and every other relationship</div>
+          </div>
+          <div class="cii-feature-item">
+            <div class="cii-feature-name">Diagnostic tools</div>
+            <div class="cii-feature-text">The framework from the mastercourse, applied to the live dataset</div>
+          </div>
+          <div class="cii-feature-item">
+            <div class="cii-feature-name">Research hypotheses</div>
+            <div class="cii-feature-text">What the completed CII makes testable for academic research</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Programme Cards Grid -->
@@ -1823,86 +1985,65 @@ h1, h2, h3 {
       </div>
 
     </div>
+
+  </div>
 </section>
 
 <!-- ================================
-     TOOLS (Toolkit + Assessment)
+     TOOLS (CII + Toolkit, side-by-side)
 ================================ -->
 <section class="section tools-section" id="tools">
   <div class="container">
 
-    <div style="margin-bottom: 80px; max-width: 780px;">
+    <div style="margin-bottom: 0; max-width: 780px;">
       <div class="eyebrow">Practice</div>
       <h2 class="section-title">Tools that turn <em>ideas into decisions</em>.</h2>
-      <p class="lede">Instruments that let you apply the ideas learnt on the mastercourses. Built for the teams, leaders, and researchers who turn concepts into policy.</p>
-    </div>
-    
-    <!-- CII Interactive Platform Callout -->
-    <div class="cii-callout">
-      <div class="cii-callout-grid">
-        <div>
-          <div class="cii-callout-label">The central instrument</div>
-          <h3 class="cii-callout-title">The <em>City Intelligence Index</em> — interactive platform</h3>
-          <p class="cii-callout-desc">An interactive platform where every pillar, indicator, and city in the comparison group becomes directly explorable. Run cross-pillar diagnostics, track trajectories over time, and apply the framework to your own city in your own context.</p>
-          <a href="https://fatimebarbara.vision/en/city-intelligence-index/" class="cii-callout-link">Explore the index →</a>
-          <div><span class="cii-coming-tag">Interactive platform — coming soon</span></div>
-        </div>
-        <div class="cii-callout-features">
-          <div class="cii-feature-item">
-            <div class="cii-feature-name">Live city profiles</div>
-            <div class="cii-feature-text">All six pillars, all comparison cities — readable cross-sectionally and over time</div>
-          </div>
-          <div class="cii-feature-item">
-            <div class="cii-feature-name">Cross-pillar analysis</div>
-            <div class="cii-feature-text">Visually explore how Foundational shapes Healthy Society, and every other relationship</div>
-          </div>
-          <div class="cii-feature-item">
-            <div class="cii-feature-name">Diagnostic tools</div>
-            <div class="cii-feature-text">The framework from the mastercourse, applied to the live dataset</div>
-          </div>
-          <div class="cii-feature-item">
-            <div class="cii-feature-name">Research hypotheses</div>
-            <div class="cii-feature-text">What the completed CII makes testable for academic research</div>
-          </div>
-        </div>
-      </div>
+      <p class="lede">Once you've grasped the ideas, these are the instruments that let you apply them. The framework's central instrument, paired with its working AI companion.</p>
     </div>
 
-    
-    
-    <!-- TOOLKIT -->
-    <!-- TOOLKIT -->
-    <div class="tool-block">
-      <div class="tool-content">
-        <div class="eyebrow gold">AI prompts &amp; frameworks</div>
-        <h3>Future of Cities Toolkit</h3>
-        <p class="tool-subtitle">Where analytical precision meets human understanding — and intelligence becomes imagination.</p>
- 
-        <p class="tool-desc">A working AI prompt library and reflection system for the people shaping tomorrow's cities. Built to be used directly inside <strong>ChatGPT, Claude, or Gemini</strong> — turning data into empathy, analysis into imagination, and policies into human-centred change.</p>
- 
-        <p class="tool-desc">Not a static PDF. Not another framework deck. A <em>thinking companion</em> for mayors, researchers, planners, and innovators who see urban life as a living system — not a spreadsheet.</p>
- 
-        <p class="tool-desc" style="margin-bottom: 16px;"><strong>Inside the toolkit:</strong></p>
- 
-        <ul class="tool-highlights">
-          <li><strong>6 modules</strong> — from <em>Seeing Cities Differently</em> to <em>The Grand Challenges of the Future of Cities</em></li>
-          <li><strong>Prompt cards</strong> for each module — copy them straight into your AI tool and adapt to your city</li>
-          <li><strong>25-prompt bonus library</strong> — covering AI for policy, storytelling, engagement, debiasing decisions, and more</li>
-          <li><strong>Leadership reflection &amp; team workshop flows</strong> — for journaling, retreats, or innovation labs</li>
-          <li><strong>Repository of source documents</strong> — the curated foundation behind every prompt</li>
+    <div class="feature-cards-grid">
+
+      <!-- CII — the prominent one (sage gradient) -->
+      <article class="feature-card cii">
+        <span class="feature-tag">The framework</span>
+        <div class="feature-eyebrow">The central instrument</div>
+        <h3 class="feature-title">City Intelligence <em>Index</em></h3>
+        <p class="feature-subtitle">A diagnostic for how cities think — not another ranking.</p>
+
+        <p class="feature-desc">The <strong>structural framework</strong> behind the mastercourse and the book. Six pillars, 150 indicators, mapped across European cities — measuring whether a city has the capacity to learn, adapt, and improve.</p>
+
+        <ul class="feature-highlights">
+          <li><strong>6 pillars</strong> of urban intelligence — from Foundational to Healthy Society</li>
+          <li><strong>150 indicators</strong> drawn from Eurostat, OECD, EU SDG Index, and more</li>
+          <li><strong>Diagnostic, not performative</strong> — surfaces structural capacity, not ranking position</li>
+          <li><strong>Interactive platform</strong> — coming soon</li>
         </ul>
- 
-        <p class="tool-desc" style="font-style: italic; color: var(--ink-muted); margin-top: 16px; font-size: 14.5px;">"Cities don't change when we know more — they change when we start imagining differently."</p>
- 
-        <a href="https://future-of-cities.lemonsqueezy.com/checkout" class="cta-button">Purchase the toolkit</a>
-      </div>
- 
-      <div class="tool-image">
-        <img src="https://fatimebarbara.github.io/learning_hub/toolkit.png" alt="Future of Cities Toolkit">
-      </div>
+
+        <a href="https://fatimebarbara.vision/en/city-intelligence-index/" class="feature-cta">Explore the index</a>
+      </article>
+
+      <!-- TOOLKIT — gold accent -->
+      <article class="feature-card toolkit">
+        <span class="feature-tag">The companion</span>
+        <div class="feature-eyebrow">AI prompts &amp; frameworks</div>
+        <h3 class="feature-title">Future of Cities <em>Toolkit</em></h3>
+        <p class="feature-subtitle">Where analytical precision meets human imagination.</p>
+
+        <p class="feature-desc">A working <strong>AI prompt library</strong> for the people shaping tomorrow's cities. Built to be used directly inside ChatGPT, Claude, or Gemini — turning data into empathy, analysis into imagination.</p>
+
+        <ul class="feature-highlights">
+          <li><strong>6 modules</strong> with prompt cards — copy them straight into your AI</li>
+          <li><strong>25-prompt bonus library</strong> on policy, storytelling, debiasing, more</li>
+          <li><strong>Reflection &amp; workshop flows</strong> for retreats and innovation labs</li>
+          <li><strong>Curated source repository</strong> behind every prompt</li>
+        </ul>
+
+        <a href="https://future-of-cities.lemonsqueezy.com/checkout" class="feature-cta">Purchase the toolkit</a>
+      </article>
+
     </div>
- 
-    <div class="ornamental-divider"><span class="mark">✦</span></div>
+  </div>
+</section>
 
 <!-- ================================
      AI COMPANIONS
@@ -1942,22 +2083,22 @@ h1, h2, h3 {
 <!-- ================================
      THE BOOK
 ================================ -->
-<sect<section class="section book-section" id="book">
+<section class="section book-section" id="book">
   <div class="container">
     <div class="book-layout">
- 
+
       <div class="book-visual" role="img" aria-label="The Future of Cities by Dr. Fatime Barbara Hegyi"></div>
- 
+
       <div class="book-content">
         <div class="eyebrow terracotta">Foundations</div>
         <h3>The book that <em>started it all</em>.</h3>
         <p><em>The Future of Cities</em> is where this journey begins — a book that redefines how we think about urban life, data, and collective intelligence. It explores how cities can move beyond efficiency to empathy, beyond management to meaning.</p>
- 
+
         <blockquote class="book-quote">Between data and dreams, we find the courage to reimagine our cities — and ourselves.</blockquote>
- 
+
         <a href="https://fatimebarbara.vision/en/books-future-of-cities/" class="cta-button">Buy the book</a>
       </div>
- 
+
     </div>
   </div>
 </section>
