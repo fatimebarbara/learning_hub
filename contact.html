@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get in Touch — Dr. Fatime Barbara Hegyi</title>
+<meta name="description" content="Reach out to Dr. Fatime Barbara Hegyi for keynotes, workshops, research collaboration, partnerships, or media enquiries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f8f5ee;
+  --paper: #fbf9f4;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #6a6a6a;
+  --sage: #3d5a3d;
+  --sage-dark: #2b412b;
+  --terracotta: #b85c38;
+  --gold: #c79a3e;
+  --rule: #d9d3c4;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Work Sans', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+}
+
+.section { padding: 100px 0; position: relative; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+/* ===================================
+   HERO
+=================================== */
+.hero {
+  min-height: auto;
+  padding: 80px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,92,56,0.18), transparent 70%);
+  filter: blur(60px);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -15%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61,90,61,0.14), transparent 70%);
+  filter: blur(80px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  width: 100%;
+}
+
+.display-title {
+  font-size: clamp(44px, 6vw, 78px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+
+.display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--terracotta);
+}
+
+.hero-lede {
+  font-size: 18.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  font-weight: 300;
+  max-width: 620px;
+}
+
+/* ===================================
+   FORM SECTION — main contact form
+=================================== */
+.form-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 80px 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.form-intro {
+  position: sticky;
+  top: 32px;
+}
+
+.form-intro h2 {
+  font-size: clamp(30px, 3.5vw, 42px);
+  font-weight: 400;
+  margin-bottom: 22px;
+  line-height: 1.1;
+}
+
+.form-intro h2 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage);
+}
+
+.form-intro p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+
+.form-intro p:last-child { margin-bottom: 0; }
+
+.form-intro strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.form-types {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px dotted var(--rule);
+}
+
+.form-types-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 14px;
+}
+
+.form-types ul {
+  list-style: none;
+}
+
+.form-types li {
+  padding: 5px 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+}
+
+.form-types li::before {
+  content: "→ ";
+  color: var(--terracotta);
+  font-weight: 400;
+  margin-right: 4px;
+}
+
+/* The form itself */
+.contact-form {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 48px 44px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group:last-of-type { margin-bottom: 28px; }
+
+.form-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.form-label .required {
+  color: var(--terracotta);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  transition: all 0.2s;
+  font-weight: 400;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+  background: var(--card);
+  box-shadow: 0 0 0 3px rgba(61,90,61,0.08);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 160px;
+  line-height: 1.55;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236a6a6a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 16px 32px;
+  border: 1.5px solid var(--ink);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.form-submit::after {
+  content: "→";
+  font-size: 14px;
+  transition: transform 0.25s;
+}
+
+.form-submit:hover {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+.form-submit:hover::after {
+  transform: translateX(4px);
+}
+
+.form-privacy {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+}
+
+/* ===================================
+   ELSEWHERE SECTION (socials)
+=================================== */
+.elsewhere-section {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.elsewhere-intro {
+  text-align: center;
+  margin-bottom: 56px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.elsewhere-intro h2 {
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 400;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.elsewhere-intro h2 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--terracotta);
+}
+
+.elsewhere-intro p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.elsewhere-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.social-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.social-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--social-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.social-card:hover::before { transform: scaleX(1); }
+
+.social-card:hover {
+  border-color: var(--social-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(26,26,26,0.06);
+}
+
+.social-card.substack { --social-accent: var(--terracotta); }
+.social-card.linkedin { --social-accent: #4a6a8c; }
+.social-card.instagram { --social-accent: #c79a3e; }
+
+.social-platform {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--social-accent);
+  margin-bottom: 12px;
+}
+
+.social-handle {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.social-desc {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.social-link {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--social-accent);
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.25s;
+}
+
+.social-card:hover .social-link { gap: 14px; }
+
+/* ===================================
+   FOOTER
+=================================== */
+.home-link-bar {
+  background: var(--ink);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.home-link-bar a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  transition: gap 0.25s;
+}
+
+.home-link-bar a:hover { gap: 18px; }
+
+.home-link-bar a::before {
+  content: "←";
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  color: var(--gold);
+}
+
+.footer-note {
+  padding: 36px 32px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--rule);
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .form-intro {
+    position: static;
+  }
+  .contact-form {
+    padding: 32px 28px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .form-row .form-group {
+    margin-bottom: 22px;
+  }
+  .elsewhere-grid {
+    grid-template-columns: 1fr;
+  }
+  .section { padding: 72px 0; }
+}
+
+@media (max-width: 560px) {
+  .container { padding: 0 20px; }
+  .contact-form { padding: 28px 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================================
+     HERO
+================================ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">Get in touch</div>
+    <h1 class="display-title">Let's start <em>a conversation</em>.</h1>
+    <p class="hero-lede">For keynotes, workshops, research collaboration, partnerships, media enquiries, or simply to share something worth thinking through together — this is where to begin.</p>
+  </div>
+</section>
+
+<!-- ================================
+     FORM SECTION
+================================ -->
+<section class="form-section">
+  <div class="container">
+    <div class="form-grid">
+
+      <!-- LEFT: framing -->
+      <div class="form-intro">
+        <h2>Send a <em>message</em>.</h2>
+        <p>I read every message myself, and I'll get back to you within a few working days.</p>
+        <p>If your enquiry is time-sensitive — a keynote in the next month, a deadline-bound partnership — please mention that in your note so I can prioritise.</p>
+
+        <div class="form-types">
+          <div class="form-types-label">Common reasons to reach out</div>
+          <ul>
+            <li>Keynote &amp; speaking invitations</li>
+            <li>Workshops &amp; masterclasses</li>
+            <li>Research &amp; co-authoring</li>
+            <li>City consultations</li>
+            <li>Media &amp; podcasts</li>
+            <li>Partnership opportunities</li>
+            <li>Something else entirely</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: the form -->
+      <form action="https://formsubmit.co/fatimebarbara@gmail.com" method="POST" class="contact-form">
+
+        <!-- Formsubmit configuration: prevent spam bots, set subject line -->
+        <input type="hidden" name="_subject" value="New message via fatimebarbara.vision">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" class="form-label">Your name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required class="form-input" placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Your email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required class="form-input" placeholder="jane@organisation.com">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="organisation" class="form-label">Organisation</label>
+            <input type="text" id="organisation" name="organisation" class="form-input" placeholder="Where you're writing from">
+          </div>
+          <div class="form-group">
+            <label for="enquiry-type" class="form-label">Type of enquiry <span class="required">*</span></label>
+            <select id="enquiry-type" name="enquiry-type" required class="form-select">
+              <option value="">Select one…</option>
+              <option value="Speaking">Keynote / speaking invitation</option>
+              <option value="Workshop">Workshop / masterclass</option>
+              <option value="Research">Research / co-authoring</option>
+              <option value="Consultation">City consultation</option>
+              <option value="Media">Media / podcast</option>
+              <option value="Partnership">Partnership opportunity</option>
+              <option value="Other">Something else</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Your message <span class="required">*</span></label>
+          <textarea id="message" name="message" required class="form-textarea" placeholder="Tell me a bit about what you're working on, what you'd like to explore, or how I can help. The more context, the better I can respond."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Send message</button>
+        <div class="form-privacy">Your message goes directly to my inbox. I respond personally within a few working days.</div>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     ELSEWHERE — socials
+================================ -->
+<section class="elsewhere-section">
+  <div class="container">
+
+    <div class="elsewhere-intro">
+      <div class="eyebrow" style="justify-content: center;">Or find me elsewhere</div>
+      <h2>Find me <em>across the web</em>.</h2>
+      <p>For thinking-in-progress, daily practice, and the conversation between formal work — these are the rooms where I show up.</p>
+    </div>
+
+    <div class="elsewhere-grid">
+
+      <a href="https://fatimebarbara.substack.com/" target="_blank" rel="noopener" class="social-card substack">
+        <div class="social-platform">Substack</div>
+        <h3 class="social-handle">The Newsletter</h3>
+        <p class="social-desc">Essays, reflections, and questions I'm sitting with. Where the framework breathes outside the lecture hall.</p>
+        <span class="social-link">Read on Substack →</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/fatimebarbara/" target="_blank" rel="noopener" class="social-card linkedin">
+        <div class="social-platform">LinkedIn</div>
+        <h3 class="social-handle">@fatimebarbara</h3>
+        <p class="social-desc">Professional updates, research milestones, and the conversations that shape how cities learn.</p>
+        <span class="social-link">Connect on LinkedIn →</span>
+      </a>
+
+      <a href="https://www.instagram.com/fatimebarbara_art/" target="_blank" rel="noopener" class="social-card instagram">
+        <div class="social-platform">Instagram</div>
+        <h3 class="social-handle">@fatimebarbara_art</h3>
+        <p class="social-desc">Where the analytical and the creative meet — paintings, moments, the textures of urban life.</p>
+        <span class="social-link">Follow on Instagram →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     BACK HOME LINK BAR
+================================ -->
+<div class="home-link-bar">
+  <a href="https://fatimebarbara.vision/en">Back to fatimebarbara.vision</a>
+</div>
+
+<div class="footer-note">
+  Between data and dreams, we find the courage to reimagine our cities — and ourselves.
+</div>
+
+</body>
+</html>
