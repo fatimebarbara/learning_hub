@@ -550,7 +550,9 @@ h1, h2, h3 {
    BOOKS DUAL DISPLAY
 =================================== */
 .books-section {
-  background: var(--cream);
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 
 .books-intro {
@@ -849,6 +851,46 @@ h1, h2, h3 {
   font-size: 13px;
   color: rgba(248,245,238,0.55);
   letter-spacing: 0.04em;
+  margin-bottom: 32px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid rgba(248,245,238,0.1);
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(248,245,238,0.7);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.footer-social-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.footer-social-link::before {
+  content: "→";
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 14px;
+  opacity: 0.7;
 }
 
 /* ===================================
@@ -933,10 +975,11 @@ h1, h2, h3 {
     <ul class="nav-links">
       <li><a href="#hub"><span class="step-num">01</span>Learning Hub</a></li>
       <li><a href="#speaking"><span class="step-num">02</span>Speaking</a></li>
-      <li><a href="#books"><span class="step-num">03</span>Books</a></li>
-      <li><a href="#publications"><span class="step-num">04</span>Publications</a></li>
-      <li><a href="#artworks"><span class="step-num">05</span>Artworks</a></li>
-      <li><a href="#companions"><span class="step-num">06</span>AI companions</a></li>
+      <li><a href="#newsletter"><span class="step-num">03</span>Newsletter</a></li>
+      <li><a href="#books"><span class="step-num">04</span>Books</a></li>
+      <li><a href="#publications"><span class="step-num">05</span>Publications</a></li>
+      <li><a href="#artworks"><span class="step-num">06</span>Artworks</a></li>
+      <li><a href="#companions"><span class="step-num">07</span>AI</a></li>
     </ul>
   </div>
 </nav>
@@ -1025,6 +1068,32 @@ h1, h2, h3 {
       </div>
 
       <div class="route-image" style="background-image: url('https://fatimebarbara.github.io/learning_hub/speaking_cnn.jpg');"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     NEWSLETTER / SUBSTACK
+================================ -->
+<section class="section route-section cream" id="newsletter">
+  <div class="container">
+    <div class="route-grid reverse">
+
+      <div class="route-content">
+        <div class="eyebrow">The Newsletter</div>
+        <h2>Stay close — <em>on Substack</em>.</h2>
+
+        <p>Essays, thinking-in-progress, and the questions I'm sitting with — between formal publications. Where the research turns into reflection, and the framework breathes outside the lecture hall.</p>
+
+        <p>For people building cities, leading institutions, or simply trying to understand the world we're shaping together. <strong>Free to read. Always thoughtful. Sometimes long.</strong></p>
+
+        <p class="route-tagline">Where the framework breathes — and the questions land.</p>
+
+        <a href="https://fatimebarbara.substack.com/" target="_blank" rel="noopener" class="route-cta">Read on Substack</a>
+      </div>
+
+      <div class="route-image" style="background-image: url('https://fatimebarbara.github.io/learning_hub/website_hero.jpg');"></div>
 
     </div>
   </div>
@@ -1144,7 +1213,7 @@ h1, h2, h3 {
         <div class="companion-mark">AI</div>
         <h3>syn.city.ai</h3>
         <p>An AI digital twin for urban systems. Where city intelligence becomes interactive — explore how decisions ripple across the structural fabric of a place.</p>
-        <a href="https://fatimebarbara.vision/learning-hub/#companions" target="_blank" rel="noopener">Discover syn.city.ai →</a>
+        <a href="https://syn.city.ai" target="_blank" rel="noopener">Discover syn.city.ai →</a>
       </div>
 
     </div>
@@ -1173,6 +1242,13 @@ h1, h2, h3 {
     <div class="footer-roles">Author · Urban Strategist · Speaker · Artist · Dreamer</div>
     <div class="footer-divider"></div>
     <div class="footer-tag">Reimagining cities as living systems of well-being, innovation, and hope.</div>
+
+    <div class="footer-socials">
+      <a href="https://fatimebarbara.substack.com/" target="_blank" rel="noopener" class="footer-social-link">Substack</a>
+      <a href="https://www.linkedin.com/in/fatimebarbara/" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+      <a href="https://www.instagram.com/fatimebarbara_art/" target="_blank" rel="noopener" class="footer-social-link">Instagram</a>
+      <a href="https://fatimebarbara.vision/en/contact/" class="footer-social-link">Contact</a>
+    </div>
   </div>
 </footer>
 
