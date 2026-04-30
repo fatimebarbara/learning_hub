@@ -533,6 +533,15 @@ h1, h2, h3 {
 }
 </style>
 </head>
+  <script>
+function sendHeight() {
+  const h = document.documentElement.scrollHeight;
+  parent.postMessage({type: 'resize-iframe', height: h, src: window.location.href}, '*');
+}
+window.addEventListener('load', sendHeight);
+window.addEventListener('resize', sendHeight);
+new ResizeObserver(sendHeight).observe(document.body);
+</script>
 <body>
 
 <!-- ================================
