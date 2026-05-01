@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base target="_top">
 <title>Future of Cities Learning Hub — Dr. Fatime Barbara Hegyi</title>
 <meta name="description" content="A learning ecosystem for policymakers, researchers, and city-shapers. Courses, tools, and companions built around the Future of Cities framework.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,11 +45,8 @@ body {
 =================================== */
 .container {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 32px;
-  padding-right: 32px;
-  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
   box-sizing: border-box;
 }
 
@@ -137,7 +135,9 @@ h1, h2, h3 {
   min-height: auto;
   display: flex;
   align-items: center;
-  padding: 80px 0 60px;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-bg {
@@ -174,7 +174,6 @@ h1, h2, h3 {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 960px;
   width: 100%;
 }
 
@@ -2206,5 +2205,33 @@ h1, h2, h3 {
   Where city intelligence becomes human — and humans become city-shapers.
 </div>
 
+<script>
+// Auto-resize: tells parent WordPress page the actual content height
+(function() {
+  function sendHeight() {
+    var h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({type: 'resize-iframe', height: h, src: window.location.href}, '*');
+    }
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  // Also send periodically for the first 3 seconds in case images load late
+  var attempts = 0;
+  var interval = setInterval(function() {
+    sendHeight();
+    attempts++;
+    if (attempts > 6) clearInterval(interval);
+  }, 500);
+})();
+</script>
 </body>
 </html>
