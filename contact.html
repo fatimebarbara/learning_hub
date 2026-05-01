@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base target="_top">
 <title>Get in Touch — Dr. Fatime Barbara Hegyi</title>
 <meta name="description" content="Reach out to Dr. Fatime Barbara Hegyi for keynotes, workshops, research collaboration, partnerships, or media enquiries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +42,7 @@ body {
   margin: 0 auto;
   padding: 0 32px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .section { padding: 100px 0; position: relative; }
@@ -79,6 +81,8 @@ h1, h2, h3 {
   padding: 80px 0 40px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .hero-bg {
@@ -533,15 +537,6 @@ h1, h2, h3 {
 }
 </style>
 </head>
-  <script>
-function sendHeight() {
-  const h = document.documentElement.scrollHeight;
-  parent.postMessage({type: 'resize-iframe', height: h, src: window.location.href}, '*');
-}
-window.addEventListener('load', sendHeight);
-window.addEventListener('resize', sendHeight);
-new ResizeObserver(sendHeight).observe(document.body);
-</script>
 <body>
 
 <!-- ================================
@@ -687,5 +682,33 @@ new ResizeObserver(sendHeight).observe(document.body);
   Between data and dreams, we find the courage to reimagine our cities — and ourselves.
 </div>
 
+<script>
+// Auto-resize: tells parent WordPress page the actual content height
+(function() {
+  function sendHeight() {
+    var h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({type: 'resize-iframe', height: h, src: window.location.href}, '*');
+    }
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  // Also send periodically for the first 3 seconds in case images load late
+  var attempts = 0;
+  var interval = setInterval(function() {
+    sendHeight();
+    attempts++;
+    if (attempts > 6) clearInterval(interval);
+  }, 500);
+})();
+</script>
 </body>
 </html>
