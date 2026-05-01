@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base target="_top">
+<title>Publications — Dr. Fatime Barbara Hegyi</title>
+<meta name="description" content="Peer-reviewed publications on urban leadership, innovation ecosystems, monitoring and evaluation, and the wider research agenda behind the Future of Cities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f8f5ee;
+  --paper: #fbf9f4;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #6a6a6a;
+  --sage: #3d5a3d;
+  --sage-dark: #2b412b;
+  --terracotta: #b85c38;
+  --terracotta-soft: #d4886a;
+  --gold: #c79a3e;
+  --rule: #d9d3c4;
+  --card: #ffffff;
+  --shadow: 0 1px 3px rgba(26,26,26,0.04), 0 12px 40px rgba(26,26,26,0.04);
+
+  /* Research area colors */
+  --r-leadership: #4a6a8c;
+  --r-innovation: #b85c38;
+  --r-monitoring: #7a5a8a;
+  --r-other: #5d8a5d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Work Sans', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section { padding: 100px 0; position: relative; }
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.eyebrow.gold { color: var(--gold); }
+.eyebrow.terracotta { color: var(--terracotta); }
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.section-title {
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage);
+}
+
+.lede {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 680px;
+}
+
+/* ===================================
+   HERO
+=================================== */
+.hero {
+  min-height: auto;
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,92,56,0.18), transparent 70%);
+  filter: blur(60px);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -15%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(61,90,61,0.14), transparent 70%);
+  filter: blur(80px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  width: 100%;
+}
+
+.display-title {
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 36px;
+}
+
+.display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sage);
+}
+
+.hero-lede {
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 700px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 56px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  border-left: 1px solid var(--rule);
+  padding-left: 24px;
+}
+
+.hero-stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.hero-stat-number em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 300;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* ===================================
+   STICKY NAV
+=================================== */
+.nav-strip {
+  background: var(--ink);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.nav-strip-label {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--cream);
+  opacity: 0.7;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+
+.nav-links a:hover { border-bottom-color: var(--gold); }
+
+.nav-links .step-num {
+  font-family: 'Fraunces', serif;
+  color: var(--gold);
+  font-size: 11px;
+  font-style: italic;
+  text-transform: none;
+  margin-right: 6px;
+}
+
+/* ===================================
+   SIGNATURE PUBLICATIONS
+=================================== */
+.signature-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.signature-intro {
+  margin-bottom: 64px;
+  max-width: 780px;
+}
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.signature-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  min-height: 420px;
+}
+
+.signature-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--terracotta);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.signature-card:hover::before { transform: scaleX(1); }
+
+.signature-card:hover {
+  border-color: var(--terracotta);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px rgba(26,26,26,0.08);
+}
+
+.signature-type {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--terracotta);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.signature-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.signature-meta {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.signature-meta strong {
+  color: var(--ink);
+  font-weight: 500;
+  font-style: normal;
+}
+
+.signature-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.signature-arrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--terracotta);
+  align-self: flex-start;
+  transition: gap 0.25s;
+}
+
+.signature-card:hover .signature-arrow { gap: 14px; }
+
+/* Year badge top right */
+.signature-year {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--ink-muted);
+}
+
+/* ===================================
+   RESEARCH AREAS — main grid
+=================================== */
+.areas-section { background: var(--cream); }
+
+.areas-intro {
+  margin-bottom: 64px;
+  max-width: 780px;
+}
+
+.area-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 80px;
+  align-items: center;
+}
+
+.area-block:last-child { margin-bottom: 0; }
+
+.area-block.reverse { grid-template-columns: 1fr 1fr; }
+.area-block.reverse .area-image { order: -1; }
+
+.area-content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-bottom: 18px;
+  color: var(--ink);
+}
+
+.area-content h3 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--area-color);
+}
+
+.area-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--area-color);
+  margin-bottom: 14px;
+}
+
+.area-desc {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.area-tagline {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--area-color);
+  margin: 24px 0;
+  padding-left: 24px;
+  border-left: 2px solid var(--area-color);
+  line-height: 1.4;
+}
+
+.area-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 13px 26px;
+  background: var(--ink);
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  border: 1.5px solid var(--ink);
+}
+
+.area-cta::after {
+  content: "→";
+  font-size: 14px;
+  transition: transform 0.25s;
+}
+
+.area-cta:hover {
+  background: var(--area-color);
+  border-color: var(--area-color);
+}
+
+.area-cta:hover::after { transform: translateX(4px); }
+
+.area-image {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  aspect-ratio: 4/5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.area-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.area-image:hover img { transform: scale(1.03); }
+
+.area-image::after {
+  content: "";
+  position: absolute;
+  top: 12px; left: 12px; right: 12px; bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.4);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Color assignments */
+.area-block.leadership { --area-color: var(--r-leadership); }
+.area-block.innovation { --area-color: var(--r-innovation); }
+.area-block.monitoring { --area-color: var(--r-monitoring); }
+.area-block.other { --area-color: var(--r-other); }
+
+/* Ornamental separator */
+.area-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 56px 0;
+  color: var(--rule);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.area-separator::before,
+.area-separator::after {
+  content: "";
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: var(--rule);
+  margin: 0 16px;
+}
+
+/* ===================================
+   AFFILIATIONS SECTION
+=================================== */
+.affiliations-section {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 80px 0;
+}
+
+.affiliations-section .section-title { color: var(--cream); }
+.affiliations-section .section-title em { color: var(--gold); }
+.affiliations-section .lede { color: rgba(248,245,238,0.7); }
+
+.affiliations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  border: 1px solid rgba(248,245,238,0.12);
+}
+
+.affiliation-item {
+  padding: 32px 28px;
+  border-right: 1px solid rgba(248,245,238,0.12);
+  border-bottom: 1px solid rgba(248,245,238,0.12);
+}
+
+.affiliation-item:nth-child(3n) { border-right: none; }
+.affiliation-item:nth-last-child(-n+3) { border-bottom: none; }
+
+.affiliation-name {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 8px;
+  letter-spacing: -0.005em;
+}
+
+.affiliation-context {
+  font-size: 13.5px;
+  color: rgba(248,245,238,0.7);
+  line-height: 1.55;
+}
+
+/* ===================================
+   CONTINUE EXPLORING
+=================================== */
+.explore-section {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  padding: 100px 0;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.explore-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.explore-card:hover {
+  border-color: var(--sage);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(26,26,26,0.06);
+}
+
+.explore-card:hover::before { transform: scaleX(1); }
+
+.explore-eyebrow {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 14px;
+}
+
+.explore-title {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.explore-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.explore-arrow {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sage);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.25s;
+}
+
+.explore-card:hover .explore-arrow { gap: 14px; }
+
+/* ===================================
+   FOOTER
+=================================== */
+.home-link-bar {
+  background: var(--ink);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.home-link-bar a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--gold);
+  transition: gap 0.25s;
+}
+
+.home-link-bar a:hover { gap: 18px; }
+
+.home-link-bar a::before {
+  content: "←";
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  color: var(--gold);
+}
+
+.footer-note {
+  padding: 36px 32px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--rule);
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 900px) {
+  .signature-grid { grid-template-columns: 1fr; }
+  .area-block, .area-block.reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .area-block.reverse .area-image { order: 0; }
+  .affiliations-grid { grid-template-columns: 1fr 1fr; }
+  .affiliation-item:nth-child(3n) { border-right: 1px solid rgba(248,245,238,0.12); }
+  .affiliation-item:nth-child(2n) { border-right: none; }
+  .explore-grid { grid-template-columns: 1fr; }
+  .section { padding: 72px 0; }
+  .nav-strip { position: static; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 11px; }
+}
+
+@media (max-width: 560px) {
+  .container { padding: 0 20px; }
+  .affiliations-grid { grid-template-columns: 1fr; }
+  .affiliation-item { border-right: none !important; }
+  .signature-year { font-size: 14px; top: 24px; right: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================================
+     HERO
+================================ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">Publications</div>
+    <h1 class="display-title">The research <em>behind</em> the framework.</h1>
+    <p class="hero-lede">Peer-reviewed articles, encyclopedia chapters, and policy publications spanning urban leadership, innovation ecosystems, and the data-driven approaches that became the foundation for The Future of Cities.</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number"><em>4</em></div>
+        <div class="hero-stat-label">Research areas</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number"><em>Peer</em></div>
+        <div class="hero-stat-label">Reviewed</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number"><em>EU</em></div>
+        <div class="hero-stat-label">Institutional research</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number"><em>Open</em></div>
+        <div class="hero-stat-label">For collaboration</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     STICKY NAV
+================================ -->
+<nav class="nav-strip">
+  <div class="container nav-strip-inner">
+    <div class="nav-strip-label">In this page →</div>
+    <ul class="nav-links">
+      <li><a href="#signature"><span class="step-num">01</span>Signature works</a></li>
+      <li><a href="#leadership"><span class="step-num">02</span>Leadership</a></li>
+      <li><a href="#innovation"><span class="step-num">03</span>Innovation ecosystems</a></li>
+      <li><a href="#monitoring"><span class="step-num">04</span>Monitoring &amp; evaluation</a></li>
+      <li><a href="#other"><span class="step-num">05</span>Other publications</a></li>
+      <li><a href="#affiliations"><span class="step-num">06</span>Affiliations</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================================
+     SIGNATURE PUBLICATIONS
+================================ -->
+<section class="section signature-section" id="signature">
+  <div class="container">
+
+    <div class="signature-intro">
+      <div class="eyebrow terracotta">Signature works</div>
+      <h2 class="section-title">Three publications, <em>three angles</em>.</h2>
+      <p class="lede">Each captures a distinct dimension of the wider research agenda — the book-length argument, the urban-density question, and the systems thinking on connectedness. Together they sketch the territory.</p>
+    </div>
+
+    <div class="signature-grid">
+
+      <!-- Signature 1: The book -->
+      <a href="https://fatimebarbara.vision/en/books-future-of-cities/" class="signature-card">
+        <span class="signature-year">2025</span>
+        <div class="signature-type">Book</div>
+        <h3 class="signature-title">The Future of Cities: A Data-Driven Approach to Tackling Grand Challenges and Building Sustainable, Resilient Communities</h3>
+        <div class="signature-meta">
+          By <strong>Fatime Barbara Hegyi, PhD</strong> · 2025 · Available on Amazon worldwide
+        </div>
+        <p class="signature-desc">The book-length argument. How place leaders armed with data and citizen science can address sustainability, health, education, security, and poverty. Presented at the European Parliament; featured in Forbes.</p>
+        <span class="signature-arrow">View book page →</span>
+      </a>
+
+      <!-- Signature 2: How Density Drives -->
+      <a href="https://www.ctbuh.org/" class="signature-card" target="_blank" rel="noopener">
+        <span class="signature-year">2025</span>
+        <div class="signature-type">Journal article</div>
+        <h3 class="signature-title">How Density Drives Sustainability, Innovation and Social Progress</h3>
+        <div class="signature-meta">
+          <strong>Vertical Urbanism</strong> — Council on Tall Buildings and Urban Habitat (CTBUH), I/2025
+        </div>
+        <p class="signature-desc">A systems-level argument for why urban density — when designed well — is the underrated engine of sustainability, innovation, and social mobility. Published in the leading journal on tall buildings and dense urban habitat.</p>
+        <span class="signature-arrow">Read at CTBUH →</span>
+      </a>
+
+      <!-- Signature 3: Connectedness -->
+      <a href="https://lnkd.in/djQMETVE" class="signature-card" target="_blank" rel="noopener">
+        <span class="signature-year">2025</span>
+        <div class="signature-type">Encyclopedia chapter</div>
+        <h3 class="signature-title">Connectedness Driving Sustainable Urban Development</h3>
+        <div class="signature-meta">
+          <strong>The Palgrave Encyclopedia of Sustainable Resources and Ecosystem Resilience</strong> · Palgrave Macmillan
+        </div>
+        <p class="signature-desc">A reference chapter examining how connectedness — between data, institutions, and citizens — drives sustainable urban development. Published in a major reference work on resource sustainability and ecosystem resilience.</p>
+        <span class="signature-arrow">Read more →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     RESEARCH AREAS
+================================ -->
+<section class="section areas-section">
+  <div class="container">
+
+    <div class="areas-intro">
+      <div class="eyebrow gold">Research areas</div>
+      <h2 class="section-title">Four bodies of work, <em>one underlying question</em>.</h2>
+      <p class="lede">Across leadership, innovation, monitoring, and adjacent fields, the work converges on one inquiry: how do places build the structural capacity to learn, adapt, and improve over time?</p>
+    </div>
+
+    <!-- LEADERSHIP -->
+    <div class="area-block leadership" id="leadership">
+      <div class="area-content">
+        <div class="area-eyebrow">Research area 01</div>
+        <h3>Publications on <em>leadership</em>.</h3>
+
+        <p class="area-desc">Research on leadership explores the critical role of urban leadership in driving positive change — how effective leadership can transform places, organisations, and their capabilities to adapt to the complex challenges of our time.</p>
+
+        <p class="area-desc">Publications focus on the interconnectedness of leadership, governance systems, stakeholder engagement, and monitoring and evaluation — and how these factors influence a city's ability to become resilient in the face of social and environmental change.</p>
+
+        <p class="area-tagline">Transforming cities, transforming lives.</p>
+
+        <a href="https://fatimebarbara.vision/en/leadership/" class="area-cta">View leadership publications</a>
+      </div>
+
+      <a href="https://fatimebarbara.vision/en/leadership/" class="area-image">
+        <img src="https://fatimebarbara.vision/en/wp-content/uploads/sites/2/2024/09/markfocus-768x1088.jpg" alt="Urban leadership for a changing world — journal cover">
+      </a>
+    </div>
+
+    <div class="area-separator">✦</div>
+
+    <!-- INNOVATION -->
+    <div class="area-block innovation reverse" id="innovation">
+      <div class="area-content">
+        <div class="area-eyebrow">Research area 02</div>
+        <h3>Publications on <em>innovation ecosystems</em>.</h3>
+
+        <p class="area-desc">Research focused on understanding the dynamics of innovation ecosystems — from their formation and measurement to their impact on urban and regional competitiveness. Through advanced data analysis and in-depth case studies, this work explores the factors that contribute to the success of innovation districts and place-based innovation.</p>
+
+        <p class="area-desc">The publications also examine the role of emerging technologies in shaping these ecosystems. By examining the intersection of technology, policy, and urban development, the research offers insights for policymakers in creating thriving innovation ecosystems that benefit communities worldwide.</p>
+
+        <p class="area-tagline">Unlocking the power of innovation.</p>
+
+        <a href="https://fatimebarbara.vision/en/publications/innovationecosystems" class="area-cta">View innovation publications</a>
+      </div>
+
+      <a href="https://fatimebarbara.vision/en/publications/innovationecosystems" class="area-image">
+        <img src="https://fatimebarbara.vision/en/wp-content/uploads/sites/2/2022/01/measuring-e1725885530763.jpeg" alt="Building thriving innovation ecosystems">
+      </a>
+    </div>
+
+    <div class="area-separator">✦</div>
+
+    <!-- MONITORING -->
+    <div class="area-block monitoring" id="monitoring">
+      <div class="area-content">
+        <div class="area-eyebrow">Research area 03</div>
+        <h3>Publications on <em>monitoring &amp; evaluation</em>.</h3>
+
+        <p class="area-desc">Measuring the success of place-based innovation ecosystems is essential for driving continuous improvement. This research focuses on the development and evaluation of effective monitoring and evaluation systems for place-based research and innovation strategies.</p>
+
+        <p class="area-desc">By analysing real-world case studies, the work explores how these systems can support policy learning, inform future policy decisions, and contribute to achieving sustainable development goals — particularly in contexts where institutional capacity to learn from policy outcomes is itself the bottleneck.</p>
+
+        <p class="area-tagline">Measuring innovation success.</p>
+
+        <a href="https://fatimebarbara.vision/en/publications/monitoring_evaluation" class="area-cta">View monitoring publications</a>
+      </div>
+
+      <a href="https://fatimebarbara.vision/en/publications/monitoring_evaluation" class="area-image">
+        <img src="https://fatimebarbara.vision/en/wp-content/uploads/sites/2/2021/10/publication6.jpg" alt="Monitoring and evaluation publications">
+      </a>
+    </div>
+
+    <div class="area-separator">✦</div>
+
+    <!-- OTHER -->
+    <div class="area-block other reverse" id="other">
+      <div class="area-content">
+        <div class="area-eyebrow">Research area 04</div>
+        <h3>Other <em>publications</em>.</h3>
+
+        <p class="area-desc">A broader collection of publications across diverse fields — from artificial intelligence and emerging technologies, to identification of reference regions, university-industry connectivity, urban mobility, and regional cooperation.</p>
+
+        <p class="area-desc">These publications focus on major opportunities and challenges shaping our world today — and on the cross-disciplinary connections between innovation, technology, and place that don't fit neatly into a single research silo.</p>
+
+        <p class="area-tagline">Innovation and beyond.</p>
+
+        <a href="https://fatimebarbara.vision/en/publications/others" class="area-cta">View other publications</a>
+      </div>
+
+      <a href="https://fatimebarbara.vision/en/publications/others" class="area-image">
+        <img src="https://fatimebarbara.vision/en/wp-content/uploads/sites/2/2024/09/mobility-713x1024.png" alt="Other publications — exploring diverse frontiers">
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     AFFILIATIONS
+================================ -->
+<section class="section affiliations-section" id="affiliations">
+  <div class="container">
+
+    <div class="eyebrow gold">Where the work is published</div>
+    <h2 class="section-title">Published with <em>major institutions and presses</em>.</h2>
+    <p class="lede">Across academic publishers, EU institutional outlets, and leading journals on urban habitat and innovation policy.</p>
+
+    <div class="affiliations-grid">
+
+      <div class="affiliation-item">
+        <div class="affiliation-name">Joint Research Centre</div>
+        <div class="affiliation-context">European Commission · Institutional research base</div>
+      </div>
+
+      <div class="affiliation-item">
+        <div class="affiliation-name">Palgrave Macmillan</div>
+        <div class="affiliation-context">Academic publisher · Encyclopedia chapters and book contributions</div>
+      </div>
+
+      <div class="affiliation-item">
+        <div class="affiliation-name">Edward Elgar Publishing</div>
+        <div class="affiliation-context">Academic publisher · Innovation and policy research</div>
+      </div>
+
+      <div class="affiliation-item">
+        <div class="affiliation-name">CTBUH</div>
+        <div class="affiliation-context">Council on Tall Buildings and Urban Habitat · Vertical Urbanism journal</div>
+      </div>
+
+      <div class="affiliation-item">
+        <div class="affiliation-name">European Parliament</div>
+        <div class="affiliation-context">Book presented at a dedicated REGI Committee session, June 2025</div>
+      </div>
+
+      <div class="affiliation-item">
+        <div class="affiliation-name">Forbes</div>
+        <div class="affiliation-context">Featured coverage on collaboration and urban transformation</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     CONTINUE EXPLORING
+================================ -->
+<section class="explore-section" id="explore">
+  <div class="container">
+
+    <div style="max-width: 780px;">
+      <div class="eyebrow">Continue exploring</div>
+      <h2 class="section-title">Where the research <em>becomes practice</em>.</h2>
+      <p class="lede">The publications inform everything else on this site. Here's where to see the research applied — in courses, in tools, and in the wider Future of Cities ecosystem.</p>
+    </div>
+
+    <div class="explore-grid">
+
+      <a href="https://fatimebarbara.vision/en/books-future-of-cities/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Foundations</div>
+          <h3 class="explore-title">The Future of Cities</h3>
+          <p class="explore-desc">The book-length argument that synthesises the research into a single, navigable framework for urban transformation.</p>
+        </div>
+        <span class="explore-arrow">Read more →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/city-intelligence-index/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Framework</div>
+          <h3 class="explore-title">City Intelligence Index</h3>
+          <p class="explore-desc">The diagnostic instrument that emerged from the research — six pillars, mapped across European cities.</p>
+        </div>
+        <span class="explore-arrow">Explore the index →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/learning-hub/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Programme</div>
+          <h3 class="explore-title">Learning Hub</h3>
+          <p class="explore-desc">Two structured courses — free and paid — that turn the research into hands-on practice for policymakers and researchers.</p>
+        </div>
+        <span class="explore-arrow">Visit the Hub →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/mastercourses" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Programmes</div>
+          <h3 class="explore-title">Mastercourses</h3>
+          <p class="explore-desc">Structured learning programmes for policymakers, researchers, corporate leaders, and university teams.</p>
+        </div>
+        <span class="explore-arrow">See all courses →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/artworks-uj/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">The Creative Side</div>
+          <h3 class="explore-title">Artworks</h3>
+          <p class="explore-desc">Where analytical work meets the visual. A different way of seeing cities — and the people inside them.</p>
+        </div>
+        <span class="explore-arrow">View the artworks →</span>
+      </a>
+
+      <a href="https://fatimebarbara.vision/en/contact/" class="explore-card">
+        <div>
+          <div class="explore-eyebrow">Get in Touch</div>
+          <h3 class="explore-title">Work together</h3>
+          <p class="explore-desc">For research collaborations, co-authoring, conference panels, or speaking engagements.</p>
+        </div>
+        <span class="explore-arrow">Send a message →</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================
+     BACK HOME LINK BAR
+================================ -->
+<div class="home-link-bar">
+  <a href="https://fatimebarbara.vision/en">Back to fatimebarbara.vision</a>
+</div>
+
+<div class="footer-note">
+  Where city intelligence becomes human — and humans become city-shapers.
+</div>
+
+<script>
+// Auto-resize: tells parent WordPress page the actual content height
+(function() {
+  function sendHeight() {
+    var h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({type: 'resize-iframe', height: h, src: window.location.href}, '*');
+    }
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  // Also send periodically for the first 3 seconds in case images load late
+  var attempts = 0;
+  var interval = setInterval(function() {
+    sendHeight();
+    attempts++;
+    if (attempts > 6) clearInterval(interval);
+  }, 500);
+})();
+</script>
+</body>
+</html>
