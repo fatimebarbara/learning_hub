@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base target="_top">
 <title>City Intelligence Index — Dr. Fatime Barbara Hegyi</title>
 <meta name="description" content="A diagnostic framework measuring the structural capacity of cities to learn, adapt, and improve. Six pillars, 150 indicators, mapped across European cities.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +56,7 @@ body {
   margin: 0 auto;
   padding: 0 32px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .section { padding: 100px 0; position: relative; }
@@ -1332,5 +1334,33 @@ h1, h2, h3 {
   Where city intelligence becomes human — and humans become city-shapers.
 </div>
 
+<script>
+// Auto-resize: tells parent WordPress page the actual content height
+(function() {
+  function sendHeight() {
+    var h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({type: 'resize-iframe', height: h, src: window.location.href}, '*');
+    }
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  // Also send periodically for the first 3 seconds in case images load late
+  var attempts = 0;
+  var interval = setInterval(function() {
+    sendHeight();
+    attempts++;
+    if (attempts > 6) clearInterval(interval);
+  }, 500);
+})();
+</script>
 </body>
 </html>
