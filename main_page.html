@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base target="_top">
 <title>Dr. Fatime Barbara Hegyi — Author. Urban Strategist. Speaker. Artist.</title>
 <meta name="description" content="Reimagining cities as living systems of well-being, innovation, and hope. Author of The Future of Cities, urban strategist, keynote speaker, and artist.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +45,7 @@ body {
   margin: 0 auto;
   padding: 0 32px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .section { padding: 100px 0; position: relative; }
@@ -106,6 +108,8 @@ h1, h2, h3 {
   padding: 100px 0 80px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .hero-bg {
@@ -148,7 +152,11 @@ h1, h2, h3 {
   align-items: center;
 }
 
-.hero-content { max-width: 720px; }
+.hero-content { max-width: 720px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
 
 .hero-roles {
   font-family: 'Fraunces', serif;
@@ -1252,5 +1260,33 @@ h1, h2, h3 {
   </div>
 </footer>
 
+<script>
+// Auto-resize: tells parent WordPress page the actual content height
+(function() {
+  function sendHeight() {
+    var h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({type: 'resize-iframe', height: h, src: window.location.href}, '*');
+    }
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  // Also send periodically for the first 3 seconds in case images load late
+  var attempts = 0;
+  var interval = setInterval(function() {
+    sendHeight();
+    attempts++;
+    if (attempts > 6) clearInterval(interval);
+  }, 500);
+})();
+</script>
 </body>
 </html>
